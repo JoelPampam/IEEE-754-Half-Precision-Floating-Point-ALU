@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Apr 25 01:08:56 2026
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : HPFPAdder
+Top-level Entity Name : HPFPAdder
+Family : MAX 10
+Total logic elements : 147
+    Total combinational functions : 147
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 47
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

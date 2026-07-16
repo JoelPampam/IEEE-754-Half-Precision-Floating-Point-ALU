@@ -1,0 +1,202 @@
+$comment
+	File created using the following command:
+		vcd file CSA.msim.vcd -direction
+$end
+$date
+	Mon Apr 20 21:48:33 2026
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2024.3
+$end
+$timescale
+	1ps
+$end
+
+$scope module CSA_vlg_vec_tst $end
+$var reg 11 ! A [10:0] $end
+$var reg 11 " B [10:0] $end
+$var reg 1 # Cin $end
+$var wire 1 $ Cout $end
+$var wire 1 % Sum [10] $end
+$var wire 1 & Sum [9] $end
+$var wire 1 ' Sum [8] $end
+$var wire 1 ( Sum [7] $end
+$var wire 1 ) Sum [6] $end
+$var wire 1 * Sum [5] $end
+$var wire 1 + Sum [4] $end
+$var wire 1 , Sum [3] $end
+$var wire 1 - Sum [2] $end
+$var wire 1 . Sum [1] $end
+$var wire 1 / Sum [0] $end
+
+$scope module i1 $end
+$var wire 1 0 gnd $end
+$var wire 1 1 vcc $end
+$var wire 1 2 unknown $end
+$var tri1 1 3 devclrn $end
+$var tri1 1 4 devpor $end
+$var tri1 1 5 devoe $end
+$var wire 1 6 ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 7 ~QUARTUS_CREATED_UNVM~~busy $end
+$var wire 1 8 ~QUARTUS_CREATED_ADC1~~eoc $end
+$var wire 1 9 ~QUARTUS_CREATED_ADC2~~eoc $end
+$var wire 1 : Sum[0]~output_o $end
+$var wire 1 ; Sum[1]~output_o $end
+$var wire 1 < Sum[2]~output_o $end
+$var wire 1 = Sum[3]~output_o $end
+$var wire 1 > Sum[4]~output_o $end
+$var wire 1 ? Sum[5]~output_o $end
+$var wire 1 @ Sum[6]~output_o $end
+$var wire 1 A Sum[7]~output_o $end
+$var wire 1 B Sum[8]~output_o $end
+$var wire 1 C Sum[9]~output_o $end
+$var wire 1 D Sum[10]~output_o $end
+$var wire 1 E Cout~output_o $end
+$var wire 1 F B[0]~input_o $end
+$var wire 1 G A[0]~input_o $end
+$var wire 1 H Cin~input_o $end
+$var wire 1 I ParameterizedRCA_inst0|full_adder[0].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 J B[1]~input_o $end
+$var wire 1 K A[1]~input_o $end
+$var wire 1 L ParameterizedRCA_inst0|full_adder[0].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 M ParameterizedRCA_inst0|full_adder[1].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 N A[2]~input_o $end
+$var wire 1 O ParameterizedRCA_inst0|full_adder[1].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 P B[2]~input_o $end
+$var wire 1 Q ParameterizedRCA_inst0|full_adder[2].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 R A[3]~input_o $end
+$var wire 1 S B[3]~input_o $end
+$var wire 1 T ParameterizedRCA_inst0|full_adder[2].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 U ParameterizedRCA_inst0|full_adder[3].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 V A[4]~input_o $end
+$var wire 1 W ParameterizedRCA_inst0|full_adder[3].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 X B[4]~input_o $end
+$var wire 1 Y ParameterizedRCA_inst0|full_adder[4].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 Z B[5]~input_o $end
+$var wire 1 [ A[5]~input_o $end
+$var wire 1 \ ParameterizedRCA_inst0|full_adder[4].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 ] R5_inst|Out~0_combout $end
+$var wire 1 ^ B[6]~input_o $end
+$var wire 1 _ A[6]~input_o $end
+$var wire 1 ` R6_inst|Out~0_combout $end
+$var wire 1 a R6_inst|Out~1_combout $end
+$var wire 1 b ParameterizedRCA_inst1|full_adder[1].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 c A[7]~input_o $end
+$var wire 1 d B[7]~input_o $end
+$var wire 1 e R7_inst|Out~0_combout $end
+$var wire 1 f ParameterizedRCA_inst2|full_adder[1].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 g R7_inst|Out~1_combout $end
+$var wire 1 h ParameterizedRCA_inst1|full_adder[2].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 i B[8]~input_o $end
+$var wire 1 j A[8]~input_o $end
+$var wire 1 k R8_inst|Out~0_combout $end
+$var wire 1 l ParameterizedRCA_inst2|full_adder[2].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 m R8_inst|Out~1_combout $end
+$var wire 1 n A[9]~input_o $end
+$var wire 1 o B[9]~input_o $end
+$var wire 1 p R9_inst|Out~0_combout $end
+$var wire 1 q ParameterizedRCA_inst1|full_adder[3].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 r ParameterizedRCA_inst2|full_adder[3].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 s R9_inst|Out~1_combout $end
+$var wire 1 t B[10]~input_o $end
+$var wire 1 u A[10]~input_o $end
+$var wire 1 v R10_inst|Out~0_combout $end
+$var wire 1 w R10_inst|Out~1_combout $end
+$var wire 1 x R10_inst|Out~2_combout $end
+$var wire 1 y Cout_inst|Out~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1111111111 !
+b1 "
+0#
+0$
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+1%
+00
+11
+x2
+13
+14
+15
+06
+z7
+z8
+z9
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+1D
+0E
+1F
+1G
+0H
+0I
+0J
+1K
+1L
+0M
+1N
+1O
+0P
+0Q
+1R
+0S
+1T
+0U
+1V
+1W
+0X
+0Y
+0Z
+1[
+1\
+0]
+0^
+1_
+1`
+0a
+0b
+1c
+0d
+1e
+1f
+0g
+0h
+0i
+1j
+1k
+1l
+0m
+1n
+0o
+1p
+0q
+1r
+0s
+0t
+0u
+1v
+1w
+1x
+0y
+$end
+#1000000

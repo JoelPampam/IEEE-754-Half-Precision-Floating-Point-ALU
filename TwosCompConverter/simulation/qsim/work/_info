@@ -1,0 +1,98 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/School/DL2/Lab9/TwosCompConverter/simulation/qsim
+T_opt
+!s110 1775108357
+V=WkHEl8QHH1?j`Wa2fPI93
+04 29 4 work TwosCompConverter_vlg_vec_tst fast 0
+=1-40c73cc1b97f-69ce0104-261-74ec
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vhard_block
+Z3 2TwosCompConverter.vo
+Z4 !s110 1775108355
+!i10b 1
+!s100 ge_6W11DnYLVkiOJjB=Jn2
+IXR5@BO;cc[LAN46E5YRP10
+R1
+Z5 w1775108353
+Z6 8TwosCompConverter.vo
+Z7 FTwosCompConverter.vo
+!i122 0
+L0 551 45
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z10 !s108 1775108355.000000
+Z11 !s107 TwosCompConverter.vo|
+Z12 !s90 -work|work|TwosCompConverter.vo|
+!i113 0
+Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vTwosCompConverter
+R3
+R4
+!i10b 1
+!s100 TQi=cRmG>Z^@YUWBGMU>e2
+I9DD7TD<[aUGCBHB<904lO0
+R1
+R5
+R6
+R7
+!i122 0
+L0 32 518
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@twos@comp@converter
+vTwosCompConverter_vlg_vec_tst
+2Waveform.vwf.vt
+R4
+!i10b 1
+!s100 BBKNf6mUe9g`_[mb3`CG20
+ILSzlg3A?L`[g2[Gd:oAzz3
+R1
+w1775108352
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 1
+L0 30 58
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R13
+R2
+n@twos@comp@converter_vlg_vec_tst

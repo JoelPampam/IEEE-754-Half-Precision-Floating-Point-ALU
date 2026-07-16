@@ -1,0 +1,494 @@
+$comment
+	File created using the following command:
+		vcd file HPFPSubtractor.msim.vcd -direction
+$end
+$date
+	Sun Apr 26 09:51:47 2026
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2024.3
+$end
+$timescale
+	1ps
+$end
+
+$scope module HPFPSubtractor_vlg_vec_tst $end
+$var reg 16 ! A [15:0] $end
+$var reg 16 " B [15:0] $end
+$var wire 1 # Exponent [4] $end
+$var wire 1 $ Exponent [3] $end
+$var wire 1 % Exponent [2] $end
+$var wire 1 & Exponent [1] $end
+$var wire 1 ' Exponent [0] $end
+$var wire 1 ( Mantissa [9] $end
+$var wire 1 ) Mantissa [8] $end
+$var wire 1 * Mantissa [7] $end
+$var wire 1 + Mantissa [6] $end
+$var wire 1 , Mantissa [5] $end
+$var wire 1 - Mantissa [4] $end
+$var wire 1 . Mantissa [3] $end
+$var wire 1 / Mantissa [2] $end
+$var wire 1 0 Mantissa [1] $end
+$var wire 1 1 Mantissa [0] $end
+
+$scope module i1 $end
+$var wire 1 2 gnd $end
+$var wire 1 3 vcc $end
+$var wire 1 4 unknown $end
+$var tri1 1 5 devclrn $end
+$var tri1 1 6 devpor $end
+$var tri1 1 7 devoe $end
+$var wire 1 8 A[15]~input_o $end
+$var wire 1 9 B[15]~input_o $end
+$var wire 1 : ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 ; ~QUARTUS_CREATED_UNVM~~busy $end
+$var wire 1 < ~QUARTUS_CREATED_ADC1~~eoc $end
+$var wire 1 = ~QUARTUS_CREATED_ADC2~~eoc $end
+$var wire 1 > Exponent[0]~output_o $end
+$var wire 1 ? Exponent[1]~output_o $end
+$var wire 1 @ Exponent[2]~output_o $end
+$var wire 1 A Exponent[3]~output_o $end
+$var wire 1 B Exponent[4]~output_o $end
+$var wire 1 C Mantissa[0]~output_o $end
+$var wire 1 D Mantissa[1]~output_o $end
+$var wire 1 E Mantissa[2]~output_o $end
+$var wire 1 F Mantissa[3]~output_o $end
+$var wire 1 G Mantissa[4]~output_o $end
+$var wire 1 H Mantissa[5]~output_o $end
+$var wire 1 I Mantissa[6]~output_o $end
+$var wire 1 J Mantissa[7]~output_o $end
+$var wire 1 K Mantissa[8]~output_o $end
+$var wire 1 L Mantissa[9]~output_o $end
+$var wire 1 M B[14]~input_o $end
+$var wire 1 N A[14]~input_o $end
+$var wire 1 O B[13]~input_o $end
+$var wire 1 P A[13]~input_o $end
+$var wire 1 Q A[11]~input_o $end
+$var wire 1 R A[10]~input_o $end
+$var wire 1 S B[11]~input_o $end
+$var wire 1 T B[10]~input_o $end
+$var wire 1 U ModularExponentSub_inst|RippleCarrySub_inst|full_adder[1].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 V B[12]~input_o $end
+$var wire 1 W A[12]~input_o $end
+$var wire 1 X ModularExponentSub_inst|RippleCarrySub_inst|full_adder[2].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 Y ModularExponentSub_inst|RippleCarrySub_inst|full_adder[3].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 Z ModularExponentSub_inst|RippleCarrySub_inst|full_adder[4].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 [ ModularExponentSub_inst|RippleCarrySub_inst|full_adder[3].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 \ ModularExponentSub_inst|RippleCarrySub_inst|full_adder[4].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 ] ModularExponentSub_inst|RippleCarrySub_inst|full_adder[1].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 ^ ModularExponentSub_inst|RippleCarrySub_inst|full_adder[2].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 _ ModularExponentSub_inst|TwosCompConverter_inst|twosFor[2].halfADDER_inst1|cout~combout $end
+$var wire 1 ` MantissaRightShifter|Mux_inst08|Out~0_combout $end
+$var wire 1 a A[2]~input_o $end
+$var wire 1 b ModularExponentSub_inst|twotoonemux_inst|out[3]~4_combout $end
+$var wire 1 c B[2]~input_o $end
+$var wire 1 d MantissaRightShifter|Mux_inst08|Out~3_combout $end
+$var wire 1 e ModularExponentSub_inst|RippleCarrySub_inst|full_adder[0].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 f ModularExponentSub_inst|twotoonemux_inst|out[2]~2_combout $end
+$var wire 1 g ModularExponentSub_inst|twotoonemux_inst|out[4]~3_combout $end
+$var wire 1 h B[6]~input_o $end
+$var wire 1 i A[6]~input_o $end
+$var wire 1 j MantissaRightShifter|Mux_inst08|Out~1_combout $end
+$var wire 1 k MantissaRightShifter|Mux_inst08|Out~2_combout $end
+$var wire 1 l MantissaRightShifter|Mux_inst08|Out~4_combout $end
+$var wire 1 m A[4]~input_o $end
+$var wire 1 n B[4]~input_o $end
+$var wire 1 o MantissaRightShifter|Mux_inst1C|Out~2_combout $end
+$var wire 1 p A[8]~input_o $end
+$var wire 1 q B[8]~input_o $end
+$var wire 1 r MantissaRightShifter|Mux_inst8|Out~0_combout $end
+$var wire 1 s MantissaRightShifter|Mux_inst0A|Out~0_combout $end
+$var wire 1 t ModularExponentSub_inst|twotoonemux_inst|out[1]~5_combout $end
+$var wire 1 u MantissaRightShifter|Mux_inst1D|Out~2_combout $end
+$var wire 1 v B[9]~input_o $end
+$var wire 1 w A[9]~input_o $end
+$var wire 1 x MantissaRightShifter|Mux_inst9|Out~0_combout $end
+$var wire 1 y B[5]~input_o $end
+$var wire 1 z A[5]~input_o $end
+$var wire 1 { MantissaRightShifter|Mux_inst12|Out~0_combout $end
+$var wire 1 | MantissaRightShifter|Mux_inst0B|Out~0_combout $end
+$var wire 1 } B[7]~input_o $end
+$var wire 1 ~ A[7]~input_o $end
+$var wire 1 !! MantissaRightShifter|Mux_inst02|Out~0_combout $end
+$var wire 1 "! A[3]~input_o $end
+$var wire 1 #! B[3]~input_o $end
+$var wire 1 $! MantissaRightShifter|Mux_inst09|Out~0_combout $end
+$var wire 1 %! MantissaRightShifter|Mux_inst09|Out~1_combout $end
+$var wire 1 &! MantissaRightShifter|Mux_inst1E|Out~0_combout $end
+$var wire 1 '! MantissaRightShifter|Mux_inst1E|Out~1_combout $end
+$var wire 1 (! ModularExponentSub_inst|RippleCarrySub_inst|full_adder[4].FullAdder_inst|WideOr0~2_combout $end
+$var wire 1 )! A[0]~input_o $end
+$var wire 1 *! B[0]~input_o $end
+$var wire 1 +! ModularExponentSub_inst|RippleCarrySub_inst|full_adder[4].FullAdder_inst|WideOr0~1_combout $end
+$var wire 1 ,! tenbitmux_addermux|out[0]~6_combout $end
+$var wire 1 -! B[1]~input_o $end
+$var wire 1 .! A[1]~input_o $end
+$var wire 1 /! tenbitmux_addermux|out[1]~7_combout $end
+$var wire 1 0! MantissaRightShifter|Mux_inst12|Out~2_combout $end
+$var wire 1 1! MantissaRightShifter|Mux_inst12|Out~3_combout $end
+$var wire 1 2! MantissaRightShifter|Mux_inst12|Out~4_combout $end
+$var wire 1 3! MantissaRightShifter|Mux_inst12|Out~1_combout $end
+$var wire 1 4! MantissaRightShifter|Mux_inst12|Out~5_combout $end
+$var wire 1 5! MantissaRightShifter|Mux_inst1C|Out~3_combout $end
+$var wire 1 6! MantissaRightShifter|Mux_inst1C|Out~4_combout $end
+$var wire 1 7! MantissaRightShifter|Mux_inst1C|Out~5_combout $end
+$var wire 1 8! MantissaRightShifter|Mux_inst1C|Out~6_combout $end
+$var wire 1 9! MantissaRightShifter|Mux_inst1C|Out~7_combout $end
+$var wire 1 :! MantissaRightShifter|Mux_inst1D|Out~3_combout $end
+$var wire 1 ;! Subtractor_inst|FullAdder_inst1|WideOr0~0_combout $end
+$var wire 1 <! tenbitmux_addermux|out[2]~5_combout $end
+$var wire 1 =! MantissaRightShifter|Mux_inst1F|Out~0_combout $end
+$var wire 1 >! MantissaRightShifter|Mux_inst1F|Out~1_combout $end
+$var wire 1 ?! MantissaRightShifter|Mux_inst1F|Out~2_combout $end
+$var wire 1 @! Subtractor_inst|FullAdder_inst3|WideOr0~1_combout $end
+$var wire 1 A! Subtractor_inst|FullAdder_inst3|WideOr0~2_combout $end
+$var wire 1 B! MantissaRightShifter|Mux_inst100|Out~1_combout $end
+$var wire 1 C! MantissaRightShifter|Mux_inst0C|Out~0_combout $end
+$var wire 1 D! MantissaRightShifter|Mux_inst100|Out~0_combout $end
+$var wire 1 E! MantissaRightShifter|Mux_inst106|Out~0_combout $end
+$var wire 1 F! MantissaRightShifter|Mux_inst100|Out~2_combout $end
+$var wire 1 G! MantissaRightShifter|Mux_inst100|Out~3_combout $end
+$var wire 1 H! Subtractor_inst|FullAdder_inst3|WideOr0~0_combout $end
+$var wire 1 I! tenbitmux_addermux|out[4]~4_combout $end
+$var wire 1 J! Subtractor_inst|FullAdder_inst4|WideOr1~0_combout $end
+$var wire 1 K! MantissaRightShifter|Mux_inst105|Out~3_combout $end
+$var wire 1 L! MantissaRightShifter|Mux_inst105|Out~2_combout $end
+$var wire 1 M! tenbitmux_addermux|out[9]~0_combout $end
+$var wire 1 N! MantissaRightShifter|Mux_inst104|Out~3_combout $end
+$var wire 1 O! MantissaRightShifter|Mux_inst104|Out~2_combout $end
+$var wire 1 P! tenbitmux_addermux|out[8]~1_combout $end
+$var wire 1 Q! MantissaRightShifter|Mux_inst102|Out~0_combout $end
+$var wire 1 R! MantissaRightShifter|Mux_inst103|Out~0_combout $end
+$var wire 1 S! MantissaRightShifter|Mux_inst103|Out~1_combout $end
+$var wire 1 T! tenbitmux_addermux|out[7]~2_combout $end
+$var wire 1 U! tenbitmux_addermux|out[6]~8_combout $end
+$var wire 1 V! MantissaRightShifter|Mux_inst101|Out~0_combout $end
+$var wire 1 W! MantissaRightShifter|Mux_inst101|Out~1_combout $end
+$var wire 1 X! MantissaRightShifter|Mux_inst101|Out~2_combout $end
+$var wire 1 Y! MantissaRightShifter|Mux_inst101|Out~3_combout $end
+$var wire 1 Z! tenbitmux_addermux|out[5]~3_combout $end
+$var wire 1 [! Subtractor_inst|FullAdder_inst4|WideOr0~0_combout $end
+$var wire 1 \! Subtractor_inst|FullAdder_inst5|WideOr0~0_combout $end
+$var wire 1 ]! MantissaRightShifter|Mux_inst102|Out~1_combout $end
+$var wire 1 ^! Subtractor_inst|FullAdder_inst6|WideOr0~0_combout $end
+$var wire 1 _! Subtractor_inst|FullAdder_inst7|WideOr0~0_combout $end
+$var wire 1 `! Subtractor_inst|FullAdder_inst8|WideOr0~0_combout $end
+$var wire 1 a! MantissaRightShifter|Mux_inst106|Out~1_combout $end
+$var wire 1 b! Subtractor_inst|FullAdder_instA|WideOr1~0_combout $end
+$var wire 1 c! Subtractor_inst|FullAdder_inst8|WideOr1~0_combout $end
+$var wire 1 d! Subtractor_inst|FullAdder_inst7|WideOr1~0_combout $end
+$var wire 1 e! Subtractor_inst|FullAdder_inst9|WideOr1~0_combout $end
+$var wire 1 f! always0~0_combout $end
+$var wire 1 g! Subtractor_inst|FullAdder_inst6|WideOr1~0_combout $end
+$var wire 1 h! leadingzeros~0_combout $end
+$var wire 1 i! leadingzeros~1_combout $end
+$var wire 1 j! Subtractor_inst|FullAdder_inst5|WideOr1~0_combout $end
+$var wire 1 k! Subtractor_inst|FullAdder_inst9|WideOr1~1_combout $end
+$var wire 1 l! always0~1_combout $end
+$var wire 1 m! always0~2_combout $end
+$var wire 1 n! leadingzeros[0]~2_combout $end
+$var wire 1 o! leadingzeros~3_combout $end
+$var wire 1 p! Subtractor_inst|FullAdder_inst2|WideOr0~0_combout $end
+$var wire 1 q! tenbitmux_addermux|out[3]~9_combout $end
+$var wire 1 r! Subtractor_inst|FullAdder_inst3|WideOr1~0_combout $end
+$var wire 1 s! always0~3_combout $end
+$var wire 1 t! leadingzeros~4_combout $end
+$var wire 1 u! leadingzeros~5_combout $end
+$var wire 1 v! always0~4_combout $end
+$var wire 1 w! Subtractor_inst|FullAdder_inst2|WideOr1~0_combout $end
+$var wire 1 x! Subtractor_inst|FullAdder_inst1|WideOr1~0_combout $end
+$var wire 1 y! leadingzeros~6_combout $end
+$var wire 1 z! always0~5_combout $end
+$var wire 1 {! leadingzeros[0]~7_combout $end
+$var wire 1 |! ExponentSubtractor_inst|FullAdder_instS0|WideOr1~0_combout $end
+$var wire 1 }! leadingzeros~8_combout $end
+$var wire 1 ~! leadingzeros~9_combout $end
+$var wire 1 !" leadingzeros[1]~10_combout $end
+$var wire 1 "" expoincmux|out[1]~0_combout $end
+$var wire 1 #" ExponentSubtractor_inst|FullAdder_instS0|Decoder0~0_combout $end
+$var wire 1 $" ExponentSubtractor_inst|FullAdder_instS1|WideOr1~0_combout $end
+$var wire 1 %" ExponentSubtractor_inst|FullAdder_instS1|WideOr0~0_combout $end
+$var wire 1 &" expoincmux|out[2]~1_combout $end
+$var wire 1 '" ExponentSubtractor_inst|FullAdder_instS2|WideOr1~0_combout $end
+$var wire 1 (" expoincmux|out[3]~2_combout $end
+$var wire 1 )" ExponentSubtractor_inst|FullAdder_instS2|WideOr0~0_combout $end
+$var wire 1 *" ExponentSubtractor_inst|FullAdder_instS3|WideOr1~0_combout $end
+$var wire 1 +" expoincmux|out[4]~3_combout $end
+$var wire 1 ," ExponentSubtractor_inst|FullAdder_instS4|WideOr1~0_combout $end
+$var wire 1 -" always0~6_combout $end
+$var wire 1 ." MantissaNormalizerLeft_inst|Mux_inst15|Out~0_combout $end
+$var wire 1 /" Subtractor_inst|FullAdder_inst0|WideOr1~0_combout $end
+$var wire 1 0" MantissaNormalizerLeft_inst|Mux_inst1C|Out~0_combout $end
+$var wire 1 1" MantissaNormalizerLeft_inst|Mux_inst1D|Out~0_combout $end
+$var wire 1 2" MantissaNormalizerLeft_inst|Mux_inst1D|Out~1_combout $end
+$var wire 1 3" MantissaNormalizerLeft_inst|Mux_inst13|Out~0_combout $end
+$var wire 1 4" MantissaNormalizerLeft_inst|Mux_inst19|Out~0_combout $end
+$var wire 1 5" MantissaNormalizerLeft_inst|Mux_inst1E|Out~1_combout $end
+$var wire 1 6" MantissaNormalizerLeft_inst|Mux_inst1E|Out~0_combout $end
+$var wire 1 7" MantissaNormalizerLeft_inst|Mux_inst1E|Out~2_combout $end
+$var wire 1 8" MantissaNormalizerLeft_inst|Mux_inst1F|Out~0_combout $end
+$var wire 1 9" MantissaNormalizerLeft_inst|Mux_inst1F|Out~1_combout $end
+$var wire 1 :" MantissaNormalizerLeft_inst|Mux_inst100|Out~0_combout $end
+$var wire 1 ;" MantissaNormalizerLeft_inst|Mux_inst17|Out~0_combout $end
+$var wire 1 <" MantissaNormalizerLeft_inst|Mux_inst16|Out~0_combout $end
+$var wire 1 =" MantissaNormalizerLeft_inst|Mux_inst15|Out~1_combout $end
+$var wire 1 >" MantissaNormalizerLeft_inst|Mux_inst100|Out~1_combout $end
+$var wire 1 ?" MantissaNormalizerLeft_inst|Mux_inst18|Out~0_combout $end
+$var wire 1 @" MantissaNormalizerLeft_inst|Mux_inst16|Out~1_combout $end
+$var wire 1 A" MantissaNormalizerLeft_inst|Mux_inst101|Out~0_combout $end
+$var wire 1 B" MantissaNormalizerLeft_inst|Mux_inst0C|Out~0_combout $end
+$var wire 1 C" MantissaNormalizerLeft_inst|Mux_inst17|Out~1_combout $end
+$var wire 1 D" MantissaNormalizerLeft_inst|Mux_inst102|Out~0_combout $end
+$var wire 1 E" MantissaNormalizerLeft_inst|Mux_inst0D|Out~0_combout $end
+$var wire 1 F" MantissaNormalizerLeft_inst|Mux_inst18|Out~1_combout $end
+$var wire 1 G" MantissaNormalizerLeft_inst|Mux_inst103|Out~0_combout $end
+$var wire 1 H" MantissaNormalizerLeft_inst|Mux_inst19|Out~1_combout $end
+$var wire 1 I" MantissaNormalizerLeft_inst|Mux_inst19|Out~2_combout $end
+$var wire 1 J" MantissaNormalizerLeft_inst|Mux_inst19|Out~3_combout $end
+$var wire 1 K" MantissaNormalizerLeft_inst|Mux_inst104|Out~0_combout $end
+$var wire 1 L" MantissaNormalizerLeft_inst|Mux_inst105|Out~0_combout $end
+$var wire 1 M" MantissaNormalizerLeft_inst|Mux_inst105|Out~1_combout $end
+$var wire 1 N" MantissaNormalizerLeft_inst|Mux_inst105|Out~2_combout $end
+$var wire 1 O" MantissaNormalizerLeft_inst|Mux_inst105|Out~3_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b101011111010010 !
+b100101000001000 "
+1'
+0&
+1%
+0$
+1#
+11
+00
+0/
+0.
+1-
+0,
+0+
+0*
+1)
+1(
+02
+13
+x4
+15
+16
+17
+08
+09
+0:
+z;
+z<
+z=
+1>
+0?
+1@
+0A
+1B
+1C
+0D
+0E
+0F
+1G
+0H
+0I
+0J
+1K
+1L
+1M
+1N
+0O
+0P
+0Q
+1R
+1S
+0T
+1U
+0V
+1W
+1X
+1Y
+1Z
+1[
+1\
+1]
+0^
+1_
+1`
+0a
+1b
+0c
+0d
+1e
+1f
+1g
+0h
+1i
+0j
+0k
+0l
+1m
+0n
+0o
+1p
+0q
+0r
+0s
+1t
+0u
+1v
+1w
+1x
+0y
+0z
+0{
+0|
+0}
+1~
+0!!
+0"!
+1#!
+1$!
+1%!
+0&!
+0'!
+1(!
+0)!
+0*!
+0+!
+0,!
+0-!
+1.!
+1/!
+00!
+01!
+02!
+13!
+14!
+05!
+06!
+07!
+08!
+19!
+0:!
+0;!
+0<!
+0=!
+0>!
+0?!
+1@!
+1A!
+0B!
+0C!
+1D!
+1E!
+0F!
+0G!
+0H!
+1I!
+0J!
+1K!
+0L!
+1M!
+1N!
+0O!
+1P!
+1Q!
+0R!
+1S!
+1T!
+1U!
+1V!
+0W!
+0X!
+0Y!
+0Z!
+1[!
+1\!
+1]!
+1^!
+1_!
+1`!
+1a!
+0b!
+0c!
+1d!
+1e!
+0f!
+1g!
+0h!
+0i!
+1j!
+0k!
+0l!
+0m!
+0n!
+1o!
+1p!
+0q!
+1r!
+0s!
+1t!
+1u!
+0v!
+0w!
+0x!
+1y!
+1z!
+1{!
+0|!
+0}!
+1~!
+0!"
+0""
+1#"
+1$"
+1%"
+1&"
+0'"
+0("
+1)"
+0*"
+1+"
+0,"
+0-"
+1."
+1/"
+10"
+01"
+02"
+03"
+04"
+05"
+06"
+07"
+08"
+09"
+0:"
+1;"
+0<"
+1="
+1>"
+0?"
+0@"
+0A"
+1B"
+0C"
+0D"
+1E"
+0F"
+0G"
+1H"
+1I"
+1J"
+1K"
+1L"
+1M"
+1N"
+1O"
+$end
+#1000000

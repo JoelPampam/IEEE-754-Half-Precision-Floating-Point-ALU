@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Mon Apr 20 21:46:27 2026
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : CSA
+Top-level Entity Name : CSA
+Family : MAX 10
+Total logic elements : 29
+    Total combinational functions : 29
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 35
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

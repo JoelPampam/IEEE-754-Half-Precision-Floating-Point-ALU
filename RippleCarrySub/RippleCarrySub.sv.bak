@@ -1,0 +1,22 @@
+module RippleCarrySub #(parameter N = 8)
+(
+	input [N-1:0] A, B,
+	output [N-1:0] R,
+	output Cout
+);
+
+	wire [N:0] C;
+	assign C[0] = 0;
+	assign Cout = C[N];
+	logic [N-1:0] Bsub;
+	assign Bsub = (~B) + 1;
+	
+	genvar i;
+	generate
+		for(i=0;i<N;i=i+1)
+			begin:full_adder
+				FullAdder FullAdder_inst (A[i],Bsub[i],C[i],Sum[i],C[i+1]);
+			end
+	endgenerate
+	
+endmodule

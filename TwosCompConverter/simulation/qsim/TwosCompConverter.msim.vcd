@@ -1,0 +1,120 @@
+$comment
+	File created using the following command:
+		vcd file TwosCompConverter.msim.vcd -direction
+$end
+$date
+	Thu Apr  2 00:39:18 2026
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2024.3
+$end
+$timescale
+	1ps
+$end
+
+$scope module TwosCompConverter_vlg_vec_tst $end
+$var reg 8 ! R [7:0] $end
+$var wire 1 " B [7] $end
+$var wire 1 # B [6] $end
+$var wire 1 $ B [5] $end
+$var wire 1 % B [4] $end
+$var wire 1 & B [3] $end
+$var wire 1 ' B [2] $end
+$var wire 1 ( B [1] $end
+$var wire 1 ) B [0] $end
+
+$scope module i1 $end
+$var wire 1 * gnd $end
+$var wire 1 + vcc $end
+$var wire 1 , unknown $end
+$var tri1 1 - devclrn $end
+$var tri1 1 . devpor $end
+$var tri1 1 / devoe $end
+$var wire 1 0 ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 1 ~QUARTUS_CREATED_UNVM~~busy $end
+$var wire 1 2 ~QUARTUS_CREATED_ADC1~~eoc $end
+$var wire 1 3 ~QUARTUS_CREATED_ADC2~~eoc $end
+$var wire 1 4 B[0]~output_o $end
+$var wire 1 5 B[1]~output_o $end
+$var wire 1 6 B[2]~output_o $end
+$var wire 1 7 B[3]~output_o $end
+$var wire 1 8 B[4]~output_o $end
+$var wire 1 9 B[5]~output_o $end
+$var wire 1 : B[6]~output_o $end
+$var wire 1 ; B[7]~output_o $end
+$var wire 1 < R[0]~input_o $end
+$var wire 1 = R[1]~input_o $end
+$var wire 1 > Add0~0_combout $end
+$var wire 1 ? R[2]~input_o $end
+$var wire 1 @ Add0~1 $end
+$var wire 1 A Add0~2_combout $end
+$var wire 1 B R[3]~input_o $end
+$var wire 1 C Add0~3 $end
+$var wire 1 D Add0~4_combout $end
+$var wire 1 E R[4]~input_o $end
+$var wire 1 F Add0~5 $end
+$var wire 1 G Add0~6_combout $end
+$var wire 1 H R[5]~input_o $end
+$var wire 1 I Add0~7 $end
+$var wire 1 J Add0~8_combout $end
+$var wire 1 K R[6]~input_o $end
+$var wire 1 L Add0~9 $end
+$var wire 1 M Add0~10_combout $end
+$var wire 1 N R[7]~input_o $end
+$var wire 1 O Add0~11 $end
+$var wire 1 P Add0~12_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11111111 !
+1)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0*
+1+
+x,
+1-
+1.
+1/
+00
+z1
+z2
+z3
+14
+05
+06
+07
+08
+09
+0:
+0;
+1<
+1=
+0>
+1?
+0@
+0A
+1B
+1C
+0D
+1E
+0F
+0G
+1H
+1I
+0J
+1K
+0L
+0M
+1N
+1O
+0P
+$end
+#1000000

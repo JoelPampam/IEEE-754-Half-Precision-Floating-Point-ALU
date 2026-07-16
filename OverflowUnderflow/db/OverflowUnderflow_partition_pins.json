@@ -1,0 +1,125 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Overflow",
+					"strict" : false
+				},
+				{
+					"name" : "Underflow",
+					"strict" : false
+				},
+				{
+					"name" : "finalexponent[0]",
+					"strict" : false
+				},
+				{
+					"name" : "finalexponent[1]",
+					"strict" : false
+				},
+				{
+					"name" : "finalexponent[2]",
+					"strict" : false
+				},
+				{
+					"name" : "finalexponent[3]",
+					"strict" : false
+				},
+				{
+					"name" : "finalexponent[4]",
+					"strict" : false
+				},
+				{
+					"name" : "finalexponent[5]",
+					"strict" : false
+				},
+				{
+					"name" : "EA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "EB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "EB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "EB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "EB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "EB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "EA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "EA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "EA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "EA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[0]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[1]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[2]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[3]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[4]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[5]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[6]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[7]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[8]",
+					"strict" : false
+				},
+				{
+					"name" : "finalmantissa[9]",
+					"strict" : false
+				},
+				{
+					"name" : "exponentsubtractorcout",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

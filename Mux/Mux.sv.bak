@@ -1,0 +1,9 @@
+module Mux(
+
+	input A,
+	input B,
+	input S,
+	output Out
+);
+
+	assign out = S ? A : B;

@@ -1,0 +1,11 @@
+//10 bit mux
+module tenbitmux
+(
+	input [9:0] A,B,
+	input select,
+	output [9:0] out
+);
+
+	assign out = select ? A : B;
+	
+endmodule

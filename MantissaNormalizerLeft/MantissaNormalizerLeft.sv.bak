@@ -1,0 +1,39 @@
+module MantissaNormalizerLeft
+(
+	input [10:0] A,
+	input select,
+	output [9:0] mantissa
+);
+
+	logic [10:0] U;
+	logic [9:0] Y;
+	Mux Mux_inst0(.A(1'b0) ,.B(A[0]) ,.S(select) ,.Out(U[0]));
+	Mux Mux_inst1(.A(A[1]) ,.B(A[1]) ,.S(select) ,.Out(U[1]));
+	Mux Mux_inst2(.A(A[2]) ,.B(A[2]) ,.S(select) ,.Out(U[2]));
+	Mux Mux_inst3(.A(A[3]) ,.B(A[3]) ,.S(select) ,.Out(U[3]));
+	Mux Mux_inst4(.A(A[4]) ,.B(A[4]) ,.S(select) ,.Out(U[4]));
+	Mux Mux_inst5(.A(A[5]) ,.B(A[5]) ,.S(select) ,.Out(U[5]));
+	Mux Mux_inst6(.A(A[6]) ,.B(A[6]) ,.S(select) ,.Out(U[6]));
+	Mux Mux_inst7(.A(A[7]) ,.B(A[7]) ,.S(select) ,.Out(U[7]));
+	Mux Mux_inst8(.A(A[8]) ,.B(A[8]) ,.S(select) ,.Out(U[8]));
+	Mux Mux_inst9(.A(A[9]) ,.B(A[9]) ,.S(select) ,.Out(U[9]));
+	Mux Mux_instA(.A(A[10]) ,.B(A[10]) ,.S(select) ,.Out(U[10]));
+	
+	always_comb begin
+		if(select == 1) begin
+			if(A[10] == 1) begin
+				Y = U[10:1] + 1'b1;
+			end
+			else begin
+				Y = U[10:1];
+			end
+		end
+		else begin
+			Y = A[9:0];
+		end
+	end
+	
+	assign mantissa = Y;
+	
+endmodule
+			

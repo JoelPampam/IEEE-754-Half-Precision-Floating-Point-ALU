@@ -1,0 +1,102 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/School/DL2/Lab10/BarrelShifter/simulation/qsim
+T_opt
+!s110 1775774691
+V78fH@ALnza41j6eShk^;^2
+04 25 4 work BarrelShifter_vlg_vec_tst fast 0
+=1-40c73cc1b97f-69d82be2-255-a8f4
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vBarrelShifter
+Z4 2BarrelShifter.vo
+Z5 !s110 1775774689
+!i10b 1
+!s100 RSYVYST=YGX0oaEi4;^ec1
+IhIc^Z`QTXUbhJnk;BS==Z0
+R2
+Z6 w1775774686
+Z7 8BarrelShifter.vo
+Z8 FBarrelShifter.vo
+!i122 6
+L0 32 784
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z11 !s108 1775774689.000000
+Z12 !s107 BarrelShifter.vo|
+Z13 !s90 -work|work|BarrelShifter.vo|
+!i113 0
+Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@barrel@shifter
+vBarrelShifter_vlg_vec_tst
+2Waveform.vwf.vt
+R5
+!i10b 1
+!s100 ^l[HaOMc_Sn88mPdhmlN<0
+Ib]flge8>k<dHdg3giWFeO1
+R2
+w1775774685
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 7
+L0 30 75
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R14
+R3
+n@barrel@shifter_vlg_vec_tst
+vhard_block
+R4
+R5
+!i10b 1
+!s100 >AD55_F:_W:<RG[[4IRLi2
+I80]2hf@<P<QEM^PWD_l:I3
+R2
+R6
+R7
+R8
+!i122 6
+L0 817 45
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R3

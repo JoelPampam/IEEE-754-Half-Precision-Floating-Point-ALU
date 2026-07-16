@@ -1,0 +1,21 @@
+//Exponent Decrementer
+module ExponentSubtractor
+(
+	input [4:0] A,
+	input [3:0] B,
+	output [4:0] exponent,
+	output cout
+);
+
+
+	logic [5:0] C;
+	assign C[0] = 1'b1;
+
+	FullAdder FullAdder_instS0(.ai(A[0]) ,.bi(B[0] ^ 1'b1) ,.cini(C[0]) ,.si(exponent[0]) ,.couti(C[1]));
+	FullAdder FullAdder_instS1(.ai(A[1]) ,.bi(B[1] ^ 1'b1) ,.cini(C[1]) ,.si(exponent[1]) ,.couti(C[2]));
+	FullAdder FullAdder_instS2(.ai(A[2]) ,.bi(B[2] ^ 1'b1) ,.cini(C[2]) ,.si(exponent[2]) ,.couti(C[3]));
+	FullAdder FullAdder_instS3(.ai(A[3]) ,.bi(B[3] ^ 1'b1) ,.cini(C[3]) ,.si(exponent[3]) ,.couti(C[4]));
+	FullAdder FullAdder_instS4(.ai(A[4]) ,.bi(1'b1) ,.cini(C[4]) ,.si(exponent[4]) ,.couti(C[5]));
+	assign cout = C[5];
+	
+endmodule

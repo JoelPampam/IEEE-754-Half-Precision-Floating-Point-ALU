@@ -1,0 +1,20 @@
+module ControlledExponent_INC_DEC
+(
+	input [7:0] A,
+	input select,cin,
+	output [7:0] S
+);
+
+	logic [8:0] C;
+	assign C[0] = cin;
+
+	FullAdder FullAdder_instS0(.ai(A[0]) ,.bi(select ^ cin) ,.cini(C[0]) ,.si(S[0]) ,.couti(C[1]));
+	FullAdder FullAdder_instS1(.ai(A[1]) ,.bi(cin ^ 1'b0) ,.cini(C[1]) ,.si(S[1]) ,.couti(C[2]));
+	FullAdder FullAdder_instS2(.ai(A[2]) ,.bi(cin ^ 1'b0) ,.cini(C[2]) ,.si(S[2]) ,.couti(C[3]));
+	FullAdder FullAdder_instS3(.ai(A[3]) ,.bi(cin ^ 1'b0) ,.cini(C[3]) ,.si(S[3]) ,.couti(C[4]));
+	FullAdder FullAdder_instS4(.ai(A[4]) ,.bi(cin ^ 1'b0) ,.cini(C[4]) ,.si(S[4]) ,.couti(C[5]));
+	FullAdder FullAdder_instS5(.ai(A[5]) ,.bi(cin ^ 1'b0) ,.cini(C[5]) ,.si(S[5]) ,.couti(C[6]));
+	FullAdder FullAdder_instS6(.ai(A[6]) ,.bi(cin ^ 1'b0) ,.cini(C[6]) ,.si(S[6]) ,.couti(C[7]));
+	FullAdder FullAdder_instS7(.ai(A[7]) ,.bi(cin ^ 1'b0) ,.cini(C[7]) ,.si(S[7]) ,.couti(C[8]));
+	
+endmodule

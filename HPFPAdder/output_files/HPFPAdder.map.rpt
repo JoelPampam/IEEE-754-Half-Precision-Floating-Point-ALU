@@ -1,0 +1,875 @@
+Analysis & Synthesis report for HPFPAdder
+Sat Apr 25 01:08:56 2026
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst
+ 11. Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst
+ 12. Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst
+ 13. Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst|twotoonemux:twotoonemux_inst
+ 14. Parameter Settings for User Entity Instance: CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0
+ 15. Parameter Settings for User Entity Instance: CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1
+ 16. Parameter Settings for User Entity Instance: CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2
+ 17. Port Connectivity Checks: "MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_instA"
+ 18. Port Connectivity Checks: "ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS4"
+ 19. Port Connectivity Checks: "CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2"
+ 20. Port Connectivity Checks: "CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1"
+ 21. Port Connectivity Checks: "CSA:CSA_inst"
+ 22. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst106"
+ 23. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst1B"
+ 24. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst1A"
+ 25. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst10"
+ 26. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0F"
+ 27. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0E"
+ 28. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0D"
+ 29. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst05"
+ 30. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst04"
+ 31. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst03"
+ 32. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst02"
+ 33. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst01"
+ 34. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst00"
+ 35. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_instF"
+ 36. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_instE"
+ 37. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_instA"
+ 38. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst9"
+ 39. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst8"
+ 40. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst7"
+ 41. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst6"
+ 42. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst5"
+ 43. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst4"
+ 44. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst3"
+ 45. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst2"
+ 46. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst1"
+ 47. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0"
+ 48. Port Connectivity Checks: "BarrelShifter:MantissaRightShifter"
+ 49. Port Connectivity Checks: "ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[4].halfADDER_inst1"
+ 50. Port Connectivity Checks: "ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[0].halfADDER_inst1"
+ 51. Port Connectivity Checks: "ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst"
+ 52. Post-Synthesis Netlist Statistics for Top Partition
+ 53. Elapsed Time Per Partition
+ 54. Analysis & Synthesis Messages
+ 55. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Apr 25 01:08:56 2026           ;
+; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                      ; HPFPAdder                                       ;
+; Top-level Entity Name              ; HPFPAdder                                       ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 147                                             ;
+;     Total combinational functions  ; 147                                             ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 47                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; HPFPAdder          ; HPFPAdder          ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
++-------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                            ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
++-------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; ../CSA/CSA.sv                                               ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/CSA/CSA.sv                                               ;         ;
+; ../twotoonemux/twotoonemux.sv                               ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/twotoonemux/twotoonemux.sv                               ;         ;
+; ../halfADDER/halfADDER.sv                                   ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/halfADDER/halfADDER.sv                                   ;         ;
+; ../TwosCompConverter/TwosCompConverter.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/TwosCompConverter/TwosCompConverter.sv                   ;         ;
+; ../tenbitmux/tenbitmux.sv                                   ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/tenbitmux/tenbitmux.sv                                   ;         ;
+; ../RippleCarrySub/RippleCarrySub.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/RippleCarrySub/RippleCarrySub.sv                         ;         ;
+; ../ParameterizedRCA/ParameterizedRCA.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/ParameterizedRCA/ParameterizedRCA.sv                     ;         ;
+; ../Mux/Mux.sv                                               ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/Mux/Mux.sv                                               ;         ;
+; ../ModularExponentSub/ModularExponentSub.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/ModularExponentSub/ModularExponentSub.sv                 ;         ;
+; ../MantissaNormalizer/MantissaNormalizer.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/MantissaNormalizer/MantissaNormalizer.sv                 ;         ;
+; ../FullAdder/FullAdder.sv                                   ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/FullAdder/FullAdder.sv                                   ;         ;
+; ../fivebitmux/fivebitmux.sv                                 ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/fivebitmux/fivebitmux.sv                                 ;         ;
+; ../ControlledExponent_INC_DEC/ControlledExponent_INC_DEC.sv ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/ControlledExponent_INC_DEC/ControlledExponent_INC_DEC.sv ;         ;
+; ../BarrelShifter/BarrelShifter.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/BarrelShifter/BarrelShifter.sv                           ;         ;
+; HPFPAdder.sv                                                ; yes             ; User SystemVerilog HDL File  ; C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv                                   ;         ;
++-------------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                                  ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                          ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 147                                                                                                                            ;
+;                                             ;                                                                                                                                ;
+; Total combinational functions               ; 147                                                                                                                            ;
+; Logic element usage by number of LUT inputs ;                                                                                                                                ;
+;     -- 4 input functions                    ; 63                                                                                                                             ;
+;     -- 3 input functions                    ; 67                                                                                                                             ;
+;     -- <=2 input functions                  ; 17                                                                                                                             ;
+;                                             ;                                                                                                                                ;
+; Logic elements by mode                      ;                                                                                                                                ;
+;     -- normal mode                          ; 138                                                                                                                            ;
+;     -- arithmetic mode                      ; 9                                                                                                                              ;
+;                                             ;                                                                                                                                ;
+; Total registers                             ; 0                                                                                                                              ;
+;     -- Dedicated logic registers            ; 0                                                                                                                              ;
+;     -- I/O registers                        ; 0                                                                                                                              ;
+;                                             ;                                                                                                                                ;
+; I/O pins                                    ; 47                                                                                                                             ;
+;                                             ;                                                                                                                                ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                              ;
+;                                             ;                                                                                                                                ;
+; Maximum fan-out node                        ; ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[4].FullAdder_inst|WideOr0~0 ;
+; Maximum fan-out                             ; 33                                                                                                                             ;
+; Total fan-out                               ; 548                                                                                                                            ;
+; Average fan-out                             ; 2.27                                                                                                                           ;
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                    ;
++-----------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                 ; Entity Name                ; Library Name ;
++-----------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; |HPFPAdder                                                      ; 147 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 47   ; 0            ; 0          ; |HPFPAdder                                                                                                                          ; HPFPAdder                  ; work         ;
+;    |BarrelShifter:MantissaRightShifter|                         ; 42 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter                                                                                       ; BarrelShifter              ; work         ;
+;       |Mux:Mux_inst02|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst02                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst08|                                          ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst08                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst09|                                          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst09                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst0A|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0A                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst0B|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0B                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst0C|                                          ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0C                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst100|                                         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst100                                                                       ; Mux                        ; work         ;
+;       |Mux:Mux_inst101|                                         ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst101                                                                       ; Mux                        ; work         ;
+;       |Mux:Mux_inst102|                                         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst102                                                                       ; Mux                        ; work         ;
+;       |Mux:Mux_inst103|                                         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst103                                                                       ; Mux                        ; work         ;
+;       |Mux:Mux_inst104|                                         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst104                                                                       ; Mux                        ; work         ;
+;       |Mux:Mux_inst105|                                         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst105                                                                       ; Mux                        ; work         ;
+;       |Mux:Mux_inst12|                                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst12                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst14|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst14                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst16|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst16                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst17|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst17                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst18|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst18                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst1C|                                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1C                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst1D|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1D                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst1E|                                          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1E                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst1F|                                          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1F                                                                        ; Mux                        ; work         ;
+;       |Mux:Mux_inst8|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst8                                                                         ; Mux                        ; work         ;
+;       |Mux:Mux_inst9|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst9                                                                         ; Mux                        ; work         ;
+;    |CSA:CSA_inst|                                               ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst                                                                                                             ; CSA                        ; work         ;
+;       |Mux:Cout_inst|                                           ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|Mux:Cout_inst                                                                                               ; Mux                        ; work         ;
+;       |Mux:R5_inst|                                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|Mux:R5_inst                                                                                                 ; Mux                        ; work         ;
+;       |Mux:R6_inst|                                             ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|Mux:R6_inst                                                                                                 ; Mux                        ; work         ;
+;       |Mux:R7_inst|                                             ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|Mux:R7_inst                                                                                                 ; Mux                        ; work         ;
+;       |Mux:R8_inst|                                             ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|Mux:R8_inst                                                                                                 ; Mux                        ; work         ;
+;       |Mux:R9_inst|                                             ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|Mux:R9_inst                                                                                                 ; Mux                        ; work         ;
+;       |ParameterizedRCA:ParameterizedRCA_inst0|                 ; 10 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0                                                                     ; ParameterizedRCA           ; work         ;
+;          |FullAdder:full_adder[0].FullAdder_inst|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[0].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[1].FullAdder_inst|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[1].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[2].FullAdder_inst|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[2].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[3].FullAdder_inst|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[3].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[4].FullAdder_inst|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[4].FullAdder_inst                              ; FullAdder                  ; work         ;
+;       |ParameterizedRCA:ParameterizedRCA_inst1|                 ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1                                                                     ; ParameterizedRCA           ; work         ;
+;          |FullAdder:full_adder[1].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[1].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[2].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[2].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[3].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[3].FullAdder_inst                              ; FullAdder                  ; work         ;
+;       |ParameterizedRCA:ParameterizedRCA_inst2|                 ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2                                                                     ; ParameterizedRCA           ; work         ;
+;          |FullAdder:full_adder[1].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[1].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[2].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[2].FullAdder_inst                              ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[3].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[3].FullAdder_inst                              ; FullAdder                  ; work         ;
+;    |ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst| ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst                                                               ; ControlledExponent_INC_DEC ; work         ;
+;       |FullAdder:FullAdder_instS0|                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS0                                    ; FullAdder                  ; work         ;
+;       |FullAdder:FullAdder_instS1|                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS1                                    ; FullAdder                  ; work         ;
+;       |FullAdder:FullAdder_instS2|                              ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS2                                    ; FullAdder                  ; work         ;
+;       |FullAdder:FullAdder_instS3|                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS3                                    ; FullAdder                  ; work         ;
+;       |FullAdder:FullAdder_instS4|                              ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS4                                    ; FullAdder                  ; work         ;
+;    |MantissaNormalizer:MantissaNormalizer_inst|                 ; 39 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst                                                                               ; MantissaNormalizer         ; work         ;
+;       |Mux:Mux_inst0|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst0                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst1|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst1                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst2|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst2                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst3|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst3                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst4|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst4                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst5|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst5                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst6|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst6                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst7|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst7                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst8|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst8                                                                 ; Mux                        ; work         ;
+;       |Mux:Mux_inst9|                                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst9                                                                 ; Mux                        ; work         ;
+;    |ModularExponentSub:ModularExponentSub_inst|                 ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst                                                                               ; ModularExponentSub         ; work         ;
+;       |RippleCarrySub:RippleCarrySub_inst|                      ; 11 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst                                            ; RippleCarrySub             ; work         ;
+;          |FullAdder:full_adder[0].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[0].FullAdder_inst     ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[1].FullAdder_inst|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[1].FullAdder_inst     ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[2].FullAdder_inst|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[2].FullAdder_inst     ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[3].FullAdder_inst|               ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[3].FullAdder_inst     ; FullAdder                  ; work         ;
+;          |FullAdder:full_adder[4].FullAdder_inst|               ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[4].FullAdder_inst     ; FullAdder                  ; work         ;
+;       |TwosCompConverter:TwosCompConverter_inst|                ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst                                      ; TwosCompConverter          ; work         ;
+;          |halfADDER:twosFor[1].halfADDER_inst1|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[1].halfADDER_inst1 ; halfADDER                  ; work         ;
+;          |halfADDER:twosFor[2].halfADDER_inst1|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[2].halfADDER_inst1 ; halfADDER                  ; work         ;
+;       |twotoonemux:twotoonemux_inst|                            ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|ModularExponentSub:ModularExponentSub_inst|twotoonemux:twotoonemux_inst                                                  ; twotoonemux                ; work         ;
+;    |fivebitmux:expoincmux|                                      ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|fivebitmux:expoincmux                                                                                                    ; fivebitmux                 ; work         ;
+;    |tenbitmux:tenbitmux_addermux|                               ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HPFPAdder|tenbitmux:tenbitmux_addermux                                                                                             ; tenbitmux                  ; work         ;
++-----------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst9|Out   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |HPFPAdder|MantissaNormalizer:MantissaNormalizer_inst|mantissa[1] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |HPFPAdder|BarrelShifter:MantissaRightShifter|Mux:Mux_inst00|Out  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; N              ; 5     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; N              ; 5     ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; N              ; 5     ; Signed Integer                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ModularExponentSub:ModularExponentSub_inst|twotoonemux:twotoonemux_inst ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; N              ; 5     ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0 ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 5     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1 ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 6     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2 ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 6     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_instA"                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; A    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS4" ;
++-------+--------+----------+---------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                               ;
++-------+--------+----------+---------------------------------------------------------------------------------------+
+; couti ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.   ;
++-------+--------+----------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; Cin  ; Input ; Info     ; Stuck at VCC                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; Cin  ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "CSA:CSA_inst" ;
++-------+-------+----------+---------------+
+; Port  ; Type  ; Severity ; Details       ;
++-------+-------+----------+---------------+
+; B[10] ; Input ; Info     ; Stuck at VCC  ;
+; Cin   ; Input ; Info     ; Stuck at GND  ;
++-------+-------+----------+---------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst106" ;
++------+-------+----------+------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                              ;
++------+-------+----------+------------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                         ;
++------+-------+----------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst1B" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst1A" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst10" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0F" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0E" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0D" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst05" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst04" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst03" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst02" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst01" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst00" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_instF" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_instE" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_instA" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst9" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst8" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst7" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst6" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst5" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst4" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst3" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst2" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst1" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; A    ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "BarrelShifter:MantissaRightShifter" ;
++-------+-------+----------+-------------------------------------+
+; Port  ; Type  ; Severity ; Details                             ;
++-------+-------+----------+-------------------------------------+
+; A[10] ; Input ; Info     ; Stuck at VCC                        ;
++-------+-------+----------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[4].halfADDER_inst1" ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                   ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[0].halfADDER_inst1" ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                    ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; b    ; Input ; Info     ; Stuck at VCC                                                                                                               ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; cin  ; Input ; Info     ; Stuck at VCC                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 47                          ;
+; cycloneiii_lcell_comb ; 148                         ;
+;     arith             ; 9                           ;
+;         2 data inputs ; 9                           ;
+;     normal            ; 139                         ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 67                          ;
+;         4 data inputs ; 63                          ;
+;                       ;                             ;
+; Max LUT depth         ; 19.90                       ;
+; Average LUT depth     ; 17.57                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Sat Apr 25 01:08:44 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HPFPAdder -c HPFPAdder
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/csa/csa.sv
+    Info (12023): Found entity 1: CSA File: C:/School/DL2/TermProject/CSA/CSA.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/twotoonemux/twotoonemux.sv
+    Info (12023): Found entity 1: twotoonemux File: C:/School/DL2/TermProject/twotoonemux/twotoonemux.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/halfadder/halfadder.sv
+    Info (12023): Found entity 1: halfADDER File: C:/School/DL2/TermProject/halfADDER/halfADDER.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/twoscompconverter/twoscompconverter.sv
+    Info (12023): Found entity 1: TwosCompConverter File: C:/School/DL2/TermProject/TwosCompConverter/TwosCompConverter.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/tenbitmux/tenbitmux.sv
+    Info (12023): Found entity 1: tenbitmux File: C:/School/DL2/TermProject/tenbitmux/tenbitmux.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/ripplecarrysub/ripplecarrysub.sv
+    Info (12023): Found entity 1: RippleCarrySub File: C:/School/DL2/TermProject/RippleCarrySub/RippleCarrySub.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/parameterizedrca/parameterizedrca.sv
+    Info (12023): Found entity 1: ParameterizedRCA File: C:/School/DL2/TermProject/ParameterizedRCA/ParameterizedRCA.sv Line: 2
+Warning (12090): Entity "Mux" obtained from "../Mux/Mux.sv" instead of from Quartus Prime megafunction library File: C:/School/DL2/TermProject/Mux/Mux.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/mux/mux.sv
+    Info (12023): Found entity 1: Mux File: C:/School/DL2/TermProject/Mux/Mux.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/modularexponentsub/modularexponentsub.sv
+    Info (12023): Found entity 1: ModularExponentSub File: C:/School/DL2/TermProject/ModularExponentSub/ModularExponentSub.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/mantissanormalizer/mantissanormalizer.sv
+    Info (12023): Found entity 1: MantissaNormalizer File: C:/School/DL2/TermProject/MantissaNormalizer/MantissaNormalizer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/fulladder/fulladder.sv
+    Info (12023): Found entity 1: FullAdder File: C:/School/DL2/TermProject/FullAdder/FullAdder.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/fivebitmux/fivebitmux.sv
+    Info (12023): Found entity 1: fivebitmux File: C:/School/DL2/TermProject/fivebitmux/fivebitmux.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/controller/controller.sv
+    Info (12023): Found entity 1: Controller File: C:/School/DL2/TermProject/Controller/Controller.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/controlledexponent_inc_dec/controlledexponent_inc_dec.sv
+    Info (12023): Found entity 1: ControlledExponent_INC_DEC File: C:/School/DL2/TermProject/ControlledExponent_INC_DEC/ControlledExponent_INC_DEC.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /school/dl2/termproject/barrelshifter/barrelshifter.sv
+    Info (12023): Found entity 1: BarrelShifter File: C:/School/DL2/TermProject/BarrelShifter/BarrelShifter.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file hpfpadder.sv
+    Info (12023): Found entity 1: HPFPAdder File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 2
+Info (12127): Elaborating entity "HPFPAdder" for the top level hierarchy
+Info (12128): Elaborating entity "ModularExponentSub" for hierarchy "ModularExponentSub:ModularExponentSub_inst" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 23
+Info (12128): Elaborating entity "RippleCarrySub" for hierarchy "ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst" File: C:/School/DL2/TermProject/ModularExponentSub/ModularExponentSub.sv Line: 19
+Info (12128): Elaborating entity "FullAdder" for hierarchy "ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[0].FullAdder_inst" File: C:/School/DL2/TermProject/RippleCarrySub/RippleCarrySub.sv Line: 18
+Info (12128): Elaborating entity "TwosCompConverter" for hierarchy "ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst" File: C:/School/DL2/TermProject/ModularExponentSub/ModularExponentSub.sv Line: 24
+Info (12128): Elaborating entity "halfADDER" for hierarchy "ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[0].halfADDER_inst1" File: C:/School/DL2/TermProject/TwosCompConverter/TwosCompConverter.sv Line: 19
+Info (12128): Elaborating entity "twotoonemux" for hierarchy "ModularExponentSub:ModularExponentSub_inst|twotoonemux:twotoonemux_inst" File: C:/School/DL2/TermProject/ModularExponentSub/ModularExponentSub.sv Line: 31
+Info (12128): Elaborating entity "tenbitmux" for hierarchy "tenbitmux:tenbitmux_shiftermux" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 31
+Info (12128): Elaborating entity "fivebitmux" for hierarchy "fivebitmux:expoincmux" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 50
+Info (12128): Elaborating entity "BarrelShifter" for hierarchy "BarrelShifter:MantissaRightShifter" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 57
+Info (12128): Elaborating entity "Mux" for hierarchy "BarrelShifter:MantissaRightShifter|Mux:Mux_inst0" File: C:/School/DL2/TermProject/BarrelShifter/BarrelShifter.sv Line: 13
+Info (12128): Elaborating entity "CSA" for hierarchy "CSA:CSA_inst" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 66
+Info (12128): Elaborating entity "ParameterizedRCA" for hierarchy "CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0" File: C:/School/DL2/TermProject/CSA/CSA.sv Line: 21
+Info (12128): Elaborating entity "ParameterizedRCA" for hierarchy "CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1" File: C:/School/DL2/TermProject/CSA/CSA.sv Line: 30
+Info (12128): Elaborating entity "ControlledExponent_INC_DEC" for hierarchy "ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 83
+Info (12128): Elaborating entity "MantissaNormalizer" for hierarchy "MantissaNormalizer:MantissaNormalizer_inst" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 91
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/School/DL2/TermProject/HPFPAdder/output_files/HPFPAdder.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "A[15]" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 4
+    Warning (15610): No output dependent on input pin "B[15]" File: C:/School/DL2/TermProject/HPFPAdder/HPFPAdder.sv Line: 4
+Info (21057): Implemented 194 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 32 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 147 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Sat Apr 25 01:08:56 2026
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/School/DL2/TermProject/HPFPAdder/output_files/HPFPAdder.map.smsg.
+
+

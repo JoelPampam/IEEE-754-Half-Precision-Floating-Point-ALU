@@ -1,0 +1,116 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/School/DL2/Lab9/ControlledExponent_INC_DEC/simulation/qsim
+T_opt
+!s110 1775364118
+V1V:bmW@7i2RE<S6KU_Y?@0
+04 38 4 work ControlledExponent_INC_DEC_vlg_vec_tst fast 0
+=1-40c73cc1b97f-69d1e815-349-8168
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vControlledExponent_INC_DEC
+Z4 2ControlledExponent_INC_DEC.vo
+Z5 !s110 1775364116
+!i10b 1
+!s100 JgRFNGPfAVKHfL1KGKY?23
+ILz6;CO3L5=:oaTU]2^M4k1
+R2
+Z6 w1775364114
+Z7 8ControlledExponent_INC_DEC.vo
+Z8 FControlledExponent_INC_DEC.vo
+!i122 20
+L0 32 610
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z11 !s108 1775364116.000000
+Z12 !s107 ControlledExponent_INC_DEC.vo|
+Z13 !s90 -work|work|ControlledExponent_INC_DEC.vo|
+!i113 0
+Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@controlled@exponent_@i@n@c_@d@e@c
+vControlledExponent_INC_DEC_vlg_vec_tst
+2Waveform.vwf.vt
+R5
+!i10b 1
+!s100 8S0E:H4ecKO4Lb7F5?`Mo3
+IEGH>;AP_1A@@5Hg9YBfR02
+R2
+w1775364113
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 21
+L0 30 74
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R14
+R3
+n@controlled@exponent_@i@n@c_@d@e@c_vlg_vec_tst
+vhard_block
+R4
+R5
+!i10b 1
+!s100 lOb:h;Pm8z:6_52DeCW^d3
+I3Tj`<2F0?OSLB6V4AljeE1
+R2
+R6
+R7
+R8
+!i122 20
+L0 643 45
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R3

@@ -1,0 +1,3307 @@
+|HalfPrecisionFPAdder
+clk => clk.IN2
+reset => reset.IN3
+row[0] => row[0].IN1
+row[1] => row[1].IN1
+row[2] => row[2].IN1
+row[3] => row[3].IN1
+col[0] << keypad_input:keypad_input_inst.col
+col[1] << keypad_input:keypad_input_inst.col
+col[2] << keypad_input:keypad_input_inst.col
+col[3] << keypad_input:keypad_input_inst.col
+CAT[0] << Multi7segdisplay:Multi7segdisplay_inst.CAT
+CAT[1] << Multi7segdisplay:Multi7segdisplay_inst.CAT
+CAT[2] << Multi7segdisplay:Multi7segdisplay_inst.CAT
+CAT[3] << Multi7segdisplay:Multi7segdisplay_inst.CAT
+SEG[6] << Multi7segdisplay:Multi7segdisplay_inst.SEG
+SEG[5] << Multi7segdisplay:Multi7segdisplay_inst.SEG
+SEG[4] << Multi7segdisplay:Multi7segdisplay_inst.SEG
+SEG[3] << Multi7segdisplay:Multi7segdisplay_inst.SEG
+SEG[2] << Multi7segdisplay:Multi7segdisplay_inst.SEG
+SEG[1] << Multi7segdisplay:Multi7segdisplay_inst.SEG
+SEG[0] << Multi7segdisplay:Multi7segdisplay_inst.SEG
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => A_reg.OUTPUTSELECT
+key2 => displaysel.OUTPUTSELECT
+key2 => displaysel.OUTPUTSELECT
+key2 => displaysel.OUTPUTSELECT
+key2 => displaysel.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key2 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => B_reg.OUTPUTSELECT
+key3 => displaysel.OUTPUTSELECT
+key3 => displaysel.OUTPUTSELECT
+key3 => displaysel.OUTPUTSELECT
+key3 => displaysel.OUTPUTSELECT
+key4 => displaysel.OUTPUTSELECT
+key4 => displaysel.OUTPUTSELECT
+key4 => displaysel.OUTPUTSELECT
+key4 => displaysel.OUTPUTSELECT
+Overflow << Overflow.DB_MAX_OUTPUT_PORT_TYPE
+Underflow << Underflow.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|keypad_input:keypad_input_inst
+clk => clk.IN1
+reset => reset.IN1
+row[0] => row[0].IN1
+row[1] => row[1].IN1
+row[2] => row[2].IN1
+row[3] => row[3].IN1
+col[0] <= keypad_base:keypad_base.col
+col[1] <= keypad_base:keypad_base.col
+col[2] <= keypad_base:keypad_base.col
+col[3] <= keypad_base:keypad_base.col
+out[0] <= shift_reg:shift_reg.out
+out[1] <= shift_reg:shift_reg.out
+out[2] <= shift_reg:shift_reg.out
+out[3] <= shift_reg:shift_reg.out
+out[4] <= shift_reg:shift_reg.out
+out[5] <= shift_reg:shift_reg.out
+out[6] <= shift_reg:shift_reg.out
+out[7] <= shift_reg:shift_reg.out
+out[8] <= shift_reg:shift_reg.out
+out[9] <= shift_reg:shift_reg.out
+out[10] <= shift_reg:shift_reg.out
+out[11] <= shift_reg:shift_reg.out
+out[12] <= shift_reg:shift_reg.out
+out[13] <= shift_reg:shift_reg.out
+out[14] <= shift_reg:shift_reg.out
+out[15] <= shift_reg:shift_reg.out
+value[0] <= value[0].DB_MAX_OUTPUT_PORT_TYPE
+value[1] <= value[1].DB_MAX_OUTPUT_PORT_TYPE
+value[2] <= value[2].DB_MAX_OUTPUT_PORT_TYPE
+value[3] <= value[3].DB_MAX_OUTPUT_PORT_TYPE
+trig <= trig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|keypad_input:keypad_input_inst|keypad_base:keypad_base
+clk => clk.IN1
+row[0] => inv_row[0].IN2
+row[1] => inv_row[1].IN2
+row[2] => inv_row[2].IN2
+row[3] => inv_row[3].IN2
+col[0] <= col[0].DB_MAX_OUTPUT_PORT_TYPE
+col[1] <= col[1].DB_MAX_OUTPUT_PORT_TYPE
+col[2] <= col[2].DB_MAX_OUTPUT_PORT_TYPE
+col[3] <= col[3].DB_MAX_OUTPUT_PORT_TYPE
+value[0] <= keypad_decoder:keypad_key_decoder.value
+value[1] <= keypad_decoder:keypad_key_decoder.value
+value[2] <= keypad_decoder:keypad_key_decoder.value
+value[3] <= keypad_decoder:keypad_key_decoder.value
+valid <= valid.DB_MAX_OUTPUT_PORT_TYPE
+slow_clock <= slow_clock.DB_MAX_OUTPUT_PORT_TYPE
+sense <= keypad_fsm:keypad_fsm.sense
+valid_digit <= keypad_decoder:keypad_key_decoder.valid
+inv_row[0] <= inv_row[0].DB_MAX_OUTPUT_PORT_TYPE
+inv_row[1] <= inv_row[1].DB_MAX_OUTPUT_PORT_TYPE
+inv_row[2] <= inv_row[2].DB_MAX_OUTPUT_PORT_TYPE
+inv_row[3] <= inv_row[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|keypad_input:keypad_input_inst|keypad_base:keypad_base|clock_div:keypad_clock_divider
+clk => clk_track.CLK
+clk => r_reg[0].CLK
+clk => r_reg[1].CLK
+clk => r_reg[2].CLK
+clk => r_reg[3].CLK
+clk => r_reg[4].CLK
+clk => r_reg[5].CLK
+clk => r_reg[6].CLK
+clk => r_reg[7].CLK
+clk => r_reg[8].CLK
+clk => r_reg[9].CLK
+clk => r_reg[10].CLK
+clk => r_reg[11].CLK
+clk => r_reg[12].CLK
+clk => r_reg[13].CLK
+clk => r_reg[14].CLK
+clk => r_reg[15].CLK
+clk => r_reg[16].CLK
+clk => r_reg[17].CLK
+clk => r_reg[18].CLK
+clk => r_reg[19].CLK
+clk => r_reg[20].CLK
+clk => r_reg[21].CLK
+clk => r_reg[22].CLK
+clk => r_reg[23].CLK
+clk => r_reg[24].CLK
+clk => r_reg[25].CLK
+clk => r_reg[26].CLK
+clk => r_reg[27].CLK
+clk => r_reg[28].CLK
+clk => r_reg[29].CLK
+clk => r_reg[30].CLK
+clk => r_reg[31].CLK
+reset => clk_track.ACLR
+reset => r_reg[0].ACLR
+reset => r_reg[1].ACLR
+reset => r_reg[2].ACLR
+reset => r_reg[3].ACLR
+reset => r_reg[4].ACLR
+reset => r_reg[5].ACLR
+reset => r_reg[6].ACLR
+reset => r_reg[7].ACLR
+reset => r_reg[8].ACLR
+reset => r_reg[9].ACLR
+reset => r_reg[10].ACLR
+reset => r_reg[11].ACLR
+reset => r_reg[12].ACLR
+reset => r_reg[13].ACLR
+reset => r_reg[14].ACLR
+reset => r_reg[15].ACLR
+reset => r_reg[16].ACLR
+reset => r_reg[17].ACLR
+reset => r_reg[18].ACLR
+reset => r_reg[19].ACLR
+reset => r_reg[20].ACLR
+reset => r_reg[21].ACLR
+reset => r_reg[22].ACLR
+reset => r_reg[23].ACLR
+reset => r_reg[24].ACLR
+reset => r_reg[25].ACLR
+reset => r_reg[26].ACLR
+reset => r_reg[27].ACLR
+reset => r_reg[28].ACLR
+reset => r_reg[29].ACLR
+reset => r_reg[30].ACLR
+reset => r_reg[31].ACLR
+clk_out <= clk_track.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|keypad_input:keypad_input_inst|keypad_base:keypad_base|keypad_fsm:keypad_fsm
+clk => col[0]~reg0.CLK
+clk => col[1]~reg0.CLK
+clk => col[2]~reg0.CLK
+clk => col[3]~reg0.CLK
+clk => state[0]~reg0.CLK
+clk => state[1]~reg0.CLK
+clk => state[2]~reg0.CLK
+clk => state[3]~reg0.CLK
+row[0] => trig.IN0
+row[1] => trig.IN1
+row[2] => trig.IN1
+row[3] => trig.IN1
+col[0] <= col[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+col[1] <= col[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+col[2] <= col[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+col[3] <= col[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sense <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[2] <= state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[3] <= state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+trig <= trig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|keypad_input:keypad_input_inst|keypad_base:keypad_base|keypad_decoder:keypad_key_decoder
+row[0] => Decoder0.IN3
+row[1] => Decoder0.IN2
+row[2] => Decoder0.IN1
+row[3] => Decoder0.IN0
+col[0] => Decoder0.IN7
+col[1] => Decoder0.IN6
+col[2] => Decoder0.IN5
+col[3] => Decoder0.IN4
+value[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+value[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+value[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+value[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+valid <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|keypad_input:keypad_input_inst|shift_reg:shift_reg
+trig => out[0]~reg0.CLK
+trig => out[1]~reg0.CLK
+trig => out[2]~reg0.CLK
+trig => out[3]~reg0.CLK
+trig => out[4]~reg0.CLK
+trig => out[5]~reg0.CLK
+trig => out[6]~reg0.CLK
+trig => out[7]~reg0.CLK
+trig => out[8]~reg0.CLK
+trig => out[9]~reg0.CLK
+trig => out[10]~reg0.CLK
+trig => out[11]~reg0.CLK
+trig => out[12]~reg0.CLK
+trig => out[13]~reg0.CLK
+trig => out[14]~reg0.CLK
+trig => out[15]~reg0.CLK
+reset => out[0]~reg0.ACLR
+reset => out[1]~reg0.ACLR
+reset => out[2]~reg0.ACLR
+reset => out[3]~reg0.ACLR
+reset => out[4]~reg0.ACLR
+reset => out[5]~reg0.ACLR
+reset => out[6]~reg0.ACLR
+reset => out[7]~reg0.ACLR
+reset => out[8]~reg0.ACLR
+reset => out[9]~reg0.ACLR
+reset => out[10]~reg0.ACLR
+reset => out[11]~reg0.ACLR
+reset => out[12]~reg0.ACLR
+reset => out[13]~reg0.ACLR
+reset => out[14]~reg0.ACLR
+reset => out[15]~reg0.ACLR
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+dir => out.OUTPUTSELECT
+in[0] => out.DATAB
+in[0] => out.DATAA
+in[1] => out.DATAB
+in[1] => out.DATAA
+in[2] => out.DATAB
+in[2] => out.DATAA
+in[3] => out.DATAB
+in[3] => out.DATAA
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|ClockLadder:ClockLadder_inst
+clock => Y[0]~reg0.CLK
+clock => Y[1]~reg0.CLK
+clock => Y[2]~reg0.CLK
+clock => Y[3]~reg0.CLK
+clock => Y[4]~reg0.CLK
+clock => Y[5]~reg0.CLK
+clock => Y[6]~reg0.CLK
+clock => Y[7]~reg0.CLK
+clock => Y[8]~reg0.CLK
+clock => Y[9]~reg0.CLK
+clock => Y[10]~reg0.CLK
+clock => Y[11]~reg0.CLK
+clock => Y[12]~reg0.CLK
+clock => Y[13]~reg0.CLK
+clock => Y[14]~reg0.CLK
+clock => Y[15]~reg0.CLK
+clock => Y[16]~reg0.CLK
+clock => Y[17]~reg0.CLK
+clock => Y[18]~reg0.CLK
+clock => Y[19]~reg0.CLK
+clock => Y[20]~reg0.CLK
+clock => Y[21]~reg0.CLK
+clock => Y[22]~reg0.CLK
+clock => Y[23]~reg0.CLK
+clock => Y[24]~reg0.CLK
+clock => Y[25]~reg0.CLK
+clock => Y[26]~reg0.CLK
+clock => Y[27]~reg0.CLK
+clock => Y[28]~reg0.CLK
+clock => Y[29]~reg0.CLK
+clock => Y[30]~reg0.CLK
+clock => Y[31]~reg0.CLK
+clear => Y[0]~reg0.ACLR
+clear => Y[1]~reg0.ACLR
+clear => Y[2]~reg0.ACLR
+clear => Y[3]~reg0.ACLR
+clear => Y[4]~reg0.ACLR
+clear => Y[5]~reg0.ACLR
+clear => Y[6]~reg0.ACLR
+clear => Y[7]~reg0.ACLR
+clear => Y[8]~reg0.ACLR
+clear => Y[9]~reg0.ACLR
+clear => Y[10]~reg0.ACLR
+clear => Y[11]~reg0.ACLR
+clear => Y[12]~reg0.ACLR
+clear => Y[13]~reg0.ACLR
+clear => Y[14]~reg0.ACLR
+clear => Y[15]~reg0.ACLR
+clear => Y[16]~reg0.ACLR
+clear => Y[17]~reg0.ACLR
+clear => Y[18]~reg0.ACLR
+clear => Y[19]~reg0.ACLR
+clear => Y[20]~reg0.ACLR
+clear => Y[21]~reg0.ACLR
+clear => Y[22]~reg0.ACLR
+clear => Y[23]~reg0.ACLR
+clear => Y[24]~reg0.ACLR
+clear => Y[25]~reg0.ACLR
+clear => Y[26]~reg0.ACLR
+clear => Y[27]~reg0.ACLR
+clear => Y[28]~reg0.ACLR
+clear => Y[29]~reg0.ACLR
+clear => Y[30]~reg0.ACLR
+clear => Y[31]~reg0.ACLR
+Y[0] <= Y[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Y[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Y[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Y[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Y[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[7] <= Y[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[8] <= Y[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[9] <= Y[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[10] <= Y[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[11] <= Y[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[12] <= Y[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[13] <= Y[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[14] <= Y[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[15] <= Y[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[16] <= Y[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[17] <= Y[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[18] <= Y[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[19] <= Y[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[20] <= Y[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[21] <= Y[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[22] <= Y[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[23] <= Y[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[24] <= Y[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[25] <= Y[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[26] <= Y[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[27] <= Y[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[28] <= Y[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[29] <= Y[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[30] <= Y[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[31] <= Y[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|CU:CU_inst
+A[0] => LessThan0.IN15
+A[0] => Aout.DATAB
+A[0] => Bout.DATAA
+A[0] => Aout.DATAA
+A[1] => LessThan0.IN14
+A[1] => Aout.DATAB
+A[1] => Bout.DATAA
+A[1] => Aout.DATAA
+A[2] => LessThan0.IN13
+A[2] => Aout.DATAB
+A[2] => Bout.DATAA
+A[2] => Aout.DATAA
+A[3] => LessThan0.IN12
+A[3] => Aout.DATAB
+A[3] => Bout.DATAA
+A[3] => Aout.DATAA
+A[4] => LessThan0.IN11
+A[4] => Aout.DATAB
+A[4] => Bout.DATAA
+A[4] => Aout.DATAA
+A[5] => LessThan0.IN10
+A[5] => Aout.DATAB
+A[5] => Bout.DATAA
+A[5] => Aout.DATAA
+A[6] => LessThan0.IN9
+A[6] => Aout.DATAB
+A[6] => Bout.DATAA
+A[6] => Aout.DATAA
+A[7] => LessThan0.IN8
+A[7] => Aout.DATAB
+A[7] => Bout.DATAA
+A[7] => Aout.DATAA
+A[8] => LessThan0.IN7
+A[8] => Aout.DATAB
+A[8] => Bout.DATAA
+A[8] => Aout.DATAA
+A[9] => LessThan0.IN6
+A[9] => Aout.DATAB
+A[9] => Bout.DATAA
+A[9] => Aout.DATAA
+A[10] => LessThan0.IN5
+A[10] => Aout.DATAB
+A[10] => Bout.DATAA
+A[10] => Aout.DATAA
+A[11] => LessThan0.IN4
+A[11] => Aout.DATAB
+A[11] => Bout.DATAA
+A[11] => Aout.DATAA
+A[12] => LessThan0.IN3
+A[12] => Aout.DATAB
+A[12] => Bout.DATAA
+A[12] => Aout.DATAA
+A[13] => LessThan0.IN2
+A[13] => Aout.DATAB
+A[13] => Bout.DATAA
+A[13] => Aout.DATAA
+A[14] => LessThan0.IN1
+A[14] => Aout.DATAB
+A[14] => Bout.DATAA
+A[14] => Aout.DATAA
+A[15] => addsub.IN0
+A[15] => Aout.DATAB
+A[15] => Bout.DATAA
+A[15] => Aout.DATAA
+A[15] => sign.DATAA
+B[0] => LessThan0.IN30
+B[0] => Aout.DATAA
+B[0] => Bout.DATAB
+B[0] => Bout.DATAA
+B[1] => LessThan0.IN29
+B[1] => Aout.DATAA
+B[1] => Bout.DATAB
+B[1] => Bout.DATAA
+B[2] => LessThan0.IN28
+B[2] => Aout.DATAA
+B[2] => Bout.DATAB
+B[2] => Bout.DATAA
+B[3] => LessThan0.IN27
+B[3] => Aout.DATAA
+B[3] => Bout.DATAB
+B[3] => Bout.DATAA
+B[4] => LessThan0.IN26
+B[4] => Aout.DATAA
+B[4] => Bout.DATAB
+B[4] => Bout.DATAA
+B[5] => LessThan0.IN25
+B[5] => Aout.DATAA
+B[5] => Bout.DATAB
+B[5] => Bout.DATAA
+B[6] => LessThan0.IN24
+B[6] => Aout.DATAA
+B[6] => Bout.DATAB
+B[6] => Bout.DATAA
+B[7] => LessThan0.IN23
+B[7] => Aout.DATAA
+B[7] => Bout.DATAB
+B[7] => Bout.DATAA
+B[8] => LessThan0.IN22
+B[8] => Aout.DATAA
+B[8] => Bout.DATAB
+B[8] => Bout.DATAA
+B[9] => LessThan0.IN21
+B[9] => Aout.DATAA
+B[9] => Bout.DATAB
+B[9] => Bout.DATAA
+B[10] => LessThan0.IN20
+B[10] => Aout.DATAA
+B[10] => Bout.DATAB
+B[10] => Bout.DATAA
+B[11] => LessThan0.IN19
+B[11] => Aout.DATAA
+B[11] => Bout.DATAB
+B[11] => Bout.DATAA
+B[12] => LessThan0.IN18
+B[12] => Aout.DATAA
+B[12] => Bout.DATAB
+B[12] => Bout.DATAA
+B[13] => LessThan0.IN17
+B[13] => Aout.DATAA
+B[13] => Bout.DATAB
+B[13] => Bout.DATAA
+B[14] => LessThan0.IN16
+B[14] => Aout.DATAA
+B[14] => Bout.DATAB
+B[14] => Bout.DATAA
+B[15] => addsub.IN1
+B[15] => Aout.DATAA
+B[15] => Bout.DATAB
+B[15] => Bout.DATAA
+Aout[0] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[1] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[2] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[3] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[4] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[5] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[6] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[7] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[8] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[9] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[10] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[11] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[12] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[13] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[14] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Aout[15] <= Aout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[0] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[1] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[2] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[3] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[4] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[5] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[6] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[7] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[8] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[9] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[10] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[11] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[12] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[13] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[14] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+Bout[15] <= Bout.DB_MAX_OUTPUT_PORT_TYPE
+addsub <= addsub.DB_MAX_OUTPUT_PORT_TYPE
+sign <= sign.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst
+A[0] => A[0].IN2
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+A[3] => A[3].IN2
+A[4] => A[4].IN2
+A[5] => A[5].IN2
+A[6] => A[6].IN2
+A[7] => A[7].IN2
+A[8] => A[8].IN2
+A[9] => A[9].IN2
+A[10] => A[10].IN2
+A[11] => A[11].IN2
+A[12] => A[12].IN2
+A[13] => A[13].IN2
+A[14] => A[14].IN2
+A[15] => ~NO_FANOUT~
+B[0] => B[0].IN2
+B[1] => B[1].IN2
+B[2] => B[2].IN2
+B[3] => B[3].IN2
+B[4] => B[4].IN2
+B[5] => B[5].IN2
+B[6] => B[6].IN2
+B[7] => B[7].IN2
+B[8] => B[8].IN2
+B[9] => B[9].IN2
+B[10] => B[10].IN2
+B[11] => B[11].IN2
+B[12] => B[12].IN2
+B[13] => B[13].IN2
+B[14] => B[14].IN2
+B[15] => ~NO_FANOUT~
+Exponent[0] <= ExponentSubtractor:ExponentSubtractor_inst.exponent
+Exponent[1] <= ExponentSubtractor:ExponentSubtractor_inst.exponent
+Exponent[2] <= ExponentSubtractor:ExponentSubtractor_inst.exponent
+Exponent[3] <= ExponentSubtractor:ExponentSubtractor_inst.exponent
+Exponent[4] <= ExponentSubtractor:ExponentSubtractor_inst.exponent
+Mantissa[0] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[1] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[2] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[3] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[4] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[5] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[6] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[7] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[8] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+Mantissa[9] <= BarrelShifterLeft:MantissaNormalizerLeft_inst.Y
+exponentsubtractorcout <= ExponentSubtractor:ExponentSubtractor_inst.cout
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+B[0] => _.IN1
+B[1] => _.IN1
+B[2] => _.IN1
+B[3] => _.IN1
+B[4] => _.IN1
+out[0] <= twotoonemux:twotoonemux_inst.out
+out[1] <= twotoonemux:twotoonemux_inst.out
+out[2] <= twotoonemux:twotoonemux_inst.out
+out[3] <= twotoonemux:twotoonemux_inst.out
+out[4] <= twotoonemux:twotoonemux_inst.out
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+cin => C[0].IN1
+R[0] <= FullAdder:full_adder[0].FullAdder_inst.port3
+R[1] <= FullAdder:full_adder[1].FullAdder_inst.port3
+R[2] <= FullAdder:full_adder[2].FullAdder_inst.port3
+R[3] <= FullAdder:full_adder[3].FullAdder_inst.port3
+R[4] <= FullAdder:full_adder[4].FullAdder_inst.port3
+Cout <= FullAdder:full_adder[4].FullAdder_inst.port4
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[0].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[1].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[2].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[3].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[4].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst
+A[0] => _.IN1
+A[1] => _.IN1
+A[2] => _.IN1
+A[3] => _.IN1
+A[4] => _.IN1
+B[0] <= halfADDER:twosFor[0].halfADDER_inst1.s
+B[1] <= halfADDER:twosFor[1].halfADDER_inst1.s
+B[2] <= halfADDER:twosFor[2].halfADDER_inst1.s
+B[3] <= halfADDER:twosFor[3].halfADDER_inst1.s
+B[4] <= halfADDER:twosFor[4].halfADDER_inst1.s
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[0].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[1].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[2].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[3].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[4].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ModularExponentSub:ModularExponentSub_inst|twotoonemux:twotoonemux_inst
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|tenbitmux:tenbitmux_shiftermux
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+A[5] => out.DATAB
+A[6] => out.DATAB
+A[7] => out.DATAB
+A[8] => out.DATAB
+A[9] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+B[5] => out.DATAA
+B[6] => out.DATAA
+B[7] => out.DATAA
+B[8] => out.DATAA
+B[9] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|tenbitmux:tenbitmux_addermux
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+A[5] => out.DATAB
+A[6] => out.DATAB
+A[7] => out.DATAB
+A[8] => out.DATAB
+A[9] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+B[5] => out.DATAA
+B[6] => out.DATAA
+B[7] => out.DATAA
+B[8] => out.DATAA
+B[9] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|fivebitmux:expoincmux
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+B[0] => B[0].IN11
+B[1] => B[1].IN11
+B[2] => B[2].IN11
+B[3] => B[3].IN11
+B[4] => B[4].IN11
+Y[0] <= Mux:Mux_inst1C.Out
+Y[1] <= Mux:Mux_inst1D.Out
+Y[2] <= Mux:Mux_inst1E.Out
+Y[3] <= Mux:Mux_inst1F.Out
+Y[4] <= Mux:Mux_inst100.Out
+Y[5] <= Mux:Mux_inst101.Out
+Y[6] <= Mux:Mux_inst102.Out
+Y[7] <= Mux:Mux_inst103.Out
+Y[8] <= Mux:Mux_inst104.Out
+Y[9] <= Mux:Mux_inst105.Out
+Y[10] <= Mux:Mux_inst106.Out
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst2
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst3
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst4
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst5
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst6
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst7
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst8
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst9
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instA
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instB
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instC
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instD
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instE
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instF
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst00
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst01
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst02
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst03
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst04
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst05
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst06
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst07
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst08
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst09
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0A
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0B
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0C
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0D
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0E
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0F
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst10
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst11
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst12
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst13
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst14
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst15
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst16
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst17
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst18
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst19
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1A
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1B
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1C
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1D
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1E
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1F
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst100
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst101
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst102
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst103
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst104
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst105
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst106
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+B[0] => comb.IN0
+B[1] => comb.IN0
+B[2] => comb.IN0
+B[3] => comb.IN0
+B[4] => comb.IN0
+B[5] => comb.IN0
+B[6] => comb.IN0
+B[7] => comb.IN0
+B[8] => comb.IN0
+B[9] => comb.IN0
+B[10] => comb.IN0
+cin => C[0].IN1
+cout <= FullAdder:FullAdder_instA.couti
+R[0] <= FullAdder:FullAdder_inst0.si
+R[1] <= FullAdder:FullAdder_inst1.si
+R[2] <= FullAdder:FullAdder_inst2.si
+R[3] <= FullAdder:FullAdder_inst3.si
+R[4] <= FullAdder:FullAdder_inst4.si
+R[5] <= FullAdder:FullAdder_inst5.si
+R[6] <= FullAdder:FullAdder_inst6.si
+R[7] <= FullAdder:FullAdder_inst7.si
+R[8] <= FullAdder:FullAdder_inst8.si
+R[9] <= FullAdder:FullAdder_inst9.si
+R[10] <= FullAdder:FullAdder_instA.si
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst0
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst1
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst2
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst3
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst4
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst5
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst6
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst7
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst8
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_inst9
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|Subtractor:Subtractor_inst|FullAdder:FullAdder_instA
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ExponentSubtractor:ExponentSubtractor_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+B[0] => _.IN1
+B[1] => _.IN1
+B[2] => _.IN1
+B[3] => _.IN1
+exponent[0] <= FullAdder:FullAdder_instS0.si
+exponent[1] <= FullAdder:FullAdder_instS1.si
+exponent[2] <= FullAdder:FullAdder_instS2.si
+exponent[3] <= FullAdder:FullAdder_instS3.si
+exponent[4] <= FullAdder:FullAdder_instS4.si
+cout <= FullAdder:FullAdder_instS4.couti
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ExponentSubtractor:ExponentSubtractor_inst|FullAdder:FullAdder_instS0
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ExponentSubtractor:ExponentSubtractor_inst|FullAdder:FullAdder_instS1
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ExponentSubtractor:ExponentSubtractor_inst|FullAdder:FullAdder_instS2
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ExponentSubtractor:ExponentSubtractor_inst|FullAdder:FullAdder_instS3
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|ExponentSubtractor:ExponentSubtractor_inst|FullAdder:FullAdder_instS4
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+B[0] => B[0].IN11
+B[1] => B[1].IN11
+B[2] => B[2].IN11
+B[3] => B[3].IN11
+B[4] => B[4].IN11
+Y[0] <= Mux:Mux_inst1C.Out
+Y[1] <= Mux:Mux_inst1D.Out
+Y[2] <= Mux:Mux_inst1E.Out
+Y[3] <= Mux:Mux_inst1F.Out
+Y[4] <= Mux:Mux_inst100.Out
+Y[5] <= Mux:Mux_inst101.Out
+Y[6] <= Mux:Mux_inst102.Out
+Y[7] <= Mux:Mux_inst103.Out
+Y[8] <= Mux:Mux_inst104.Out
+Y[9] <= Mux:Mux_inst105.Out
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst0
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst1
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst2
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst3
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst4
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst5
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst6
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst7
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst8
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst9
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_instA
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_instB
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_instC
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_instD
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_instE
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_instF
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst00
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst01
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst02
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst03
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst04
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst05
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst06
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst07
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst08
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst09
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst0A
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst0B
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst0C
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst0D
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst0E
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst0F
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst10
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst11
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst12
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst13
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst14
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst15
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst16
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst17
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst18
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst19
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst1A
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst1B
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst1C
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst1D
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst1E
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst1F
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst100
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst101
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst102
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst103
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst104
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst105
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPSubtractor:HPFPSubtractor_inst|BarrelShifterLeft:MantissaNormalizerLeft_inst|Mux:Mux_inst106
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst
+A[0] => A[0].IN2
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+A[3] => A[3].IN2
+A[4] => A[4].IN2
+A[5] => A[5].IN2
+A[6] => A[6].IN2
+A[7] => A[7].IN2
+A[8] => A[8].IN2
+A[9] => A[9].IN2
+A[10] => A[10].IN2
+A[11] => A[11].IN2
+A[12] => A[12].IN2
+A[13] => A[13].IN2
+A[14] => A[14].IN2
+A[15] => ~NO_FANOUT~
+B[0] => B[0].IN2
+B[1] => B[1].IN2
+B[2] => B[2].IN2
+B[3] => B[3].IN2
+B[4] => B[4].IN2
+B[5] => B[5].IN2
+B[6] => B[6].IN2
+B[7] => B[7].IN2
+B[8] => B[8].IN2
+B[9] => B[9].IN2
+B[10] => B[10].IN2
+B[11] => B[11].IN2
+B[12] => B[12].IN2
+B[13] => B[13].IN2
+B[14] => B[14].IN2
+B[15] => ~NO_FANOUT~
+Exponent[0] <= ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst.exponent
+Exponent[1] <= ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst.exponent
+Exponent[2] <= ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst.exponent
+Exponent[3] <= ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst.exponent
+Exponent[4] <= ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst.exponent
+Mantissa[0] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[1] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[2] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[3] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[4] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[5] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[6] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[7] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[8] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+Mantissa[9] <= MantissaNormalizer:MantissaNormalizer_inst.mantissa
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+B[0] => _.IN1
+B[1] => _.IN1
+B[2] => _.IN1
+B[3] => _.IN1
+B[4] => _.IN1
+out[0] <= twotoonemux:twotoonemux_inst.out
+out[1] <= twotoonemux:twotoonemux_inst.out
+out[2] <= twotoonemux:twotoonemux_inst.out
+out[3] <= twotoonemux:twotoonemux_inst.out
+out[4] <= twotoonemux:twotoonemux_inst.out
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+cin => C[0].IN1
+R[0] <= FullAdder:full_adder[0].FullAdder_inst.port3
+R[1] <= FullAdder:full_adder[1].FullAdder_inst.port3
+R[2] <= FullAdder:full_adder[2].FullAdder_inst.port3
+R[3] <= FullAdder:full_adder[3].FullAdder_inst.port3
+R[4] <= FullAdder:full_adder[4].FullAdder_inst.port3
+Cout <= FullAdder:full_adder[4].FullAdder_inst.port4
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[0].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[1].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[2].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[3].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|RippleCarrySub:RippleCarrySub_inst|FullAdder:full_adder[4].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst
+A[0] => _.IN1
+A[1] => _.IN1
+A[2] => _.IN1
+A[3] => _.IN1
+A[4] => _.IN1
+B[0] <= halfADDER:twosFor[0].halfADDER_inst1.s
+B[1] <= halfADDER:twosFor[1].halfADDER_inst1.s
+B[2] <= halfADDER:twosFor[2].halfADDER_inst1.s
+B[3] <= halfADDER:twosFor[3].halfADDER_inst1.s
+B[4] <= halfADDER:twosFor[4].halfADDER_inst1.s
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[0].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[1].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[2].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[3].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|TwosCompConverter:TwosCompConverter_inst|halfADDER:twosFor[4].halfADDER_inst1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cout <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ModularExponentSub:ModularExponentSub_inst|twotoonemux:twotoonemux_inst
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|tenbitmux:tenbitmux_shiftermux
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+A[5] => out.DATAB
+A[6] => out.DATAB
+A[7] => out.DATAB
+A[8] => out.DATAB
+A[9] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+B[5] => out.DATAA
+B[6] => out.DATAA
+B[7] => out.DATAA
+B[8] => out.DATAA
+B[9] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|tenbitmux:tenbitmux_addermux
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+A[5] => out.DATAB
+A[6] => out.DATAB
+A[7] => out.DATAB
+A[8] => out.DATAB
+A[9] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+B[5] => out.DATAA
+B[6] => out.DATAA
+B[7] => out.DATAA
+B[8] => out.DATAA
+B[9] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|fivebitmux:expoincmux
+A[0] => out.DATAB
+A[1] => out.DATAB
+A[2] => out.DATAB
+A[3] => out.DATAB
+A[4] => out.DATAB
+B[0] => out.DATAA
+B[1] => out.DATAA
+B[2] => out.DATAA
+B[3] => out.DATAA
+B[4] => out.DATAA
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+select => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+B[0] => B[0].IN11
+B[1] => B[1].IN11
+B[2] => B[2].IN11
+B[3] => B[3].IN11
+B[4] => B[4].IN11
+Y[0] <= Mux:Mux_inst1C.Out
+Y[1] <= Mux:Mux_inst1D.Out
+Y[2] <= Mux:Mux_inst1E.Out
+Y[3] <= Mux:Mux_inst1F.Out
+Y[4] <= Mux:Mux_inst100.Out
+Y[5] <= Mux:Mux_inst101.Out
+Y[6] <= Mux:Mux_inst102.Out
+Y[7] <= Mux:Mux_inst103.Out
+Y[8] <= Mux:Mux_inst104.Out
+Y[9] <= Mux:Mux_inst105.Out
+Y[10] <= Mux:Mux_inst106.Out
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst2
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst3
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst4
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst5
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst6
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst7
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst8
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst9
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instA
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instB
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instC
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instD
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instE
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_instF
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst00
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst01
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst02
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst03
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst04
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst05
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst06
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst07
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst08
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst09
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0A
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0B
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0C
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0D
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0E
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst0F
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst10
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst11
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst12
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst13
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst14
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst15
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst16
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst17
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst18
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst19
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1A
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1B
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1C
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1D
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1E
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst1F
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst100
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst101
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst102
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst103
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst104
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst105
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|BarrelShifter:MantissaRightShifter|Mux:Mux_inst106
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN2
+A[6] => A[6].IN2
+A[7] => A[7].IN2
+A[8] => A[8].IN2
+A[9] => A[9].IN2
+A[10] => A[10].IN2
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN2
+B[6] => B[6].IN2
+B[7] => B[7].IN2
+B[8] => B[8].IN2
+B[9] => B[9].IN2
+B[10] => B[10].IN2
+Cin => Cin.IN1
+Sum[0] <= ParameterizedRCA:ParameterizedRCA_inst0.Sum
+Sum[1] <= ParameterizedRCA:ParameterizedRCA_inst0.Sum
+Sum[2] <= ParameterizedRCA:ParameterizedRCA_inst0.Sum
+Sum[3] <= ParameterizedRCA:ParameterizedRCA_inst0.Sum
+Sum[4] <= ParameterizedRCA:ParameterizedRCA_inst0.Sum
+Sum[5] <= Mux:R5_inst.Out
+Sum[6] <= Mux:R6_inst.Out
+Sum[7] <= Mux:R7_inst.Out
+Sum[8] <= Mux:R8_inst.Out
+Sum[9] <= Mux:R9_inst.Out
+Sum[10] <= Mux:R10_inst.Out
+Cout <= Mux:Cout_inst.Out
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0
+Cin => C[0].IN1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+Sum[0] <= FullAdder:full_adder[0].FullAdder_inst.port3
+Sum[1] <= FullAdder:full_adder[1].FullAdder_inst.port3
+Sum[2] <= FullAdder:full_adder[2].FullAdder_inst.port3
+Sum[3] <= FullAdder:full_adder[3].FullAdder_inst.port3
+Sum[4] <= FullAdder:full_adder[4].FullAdder_inst.port3
+Cout <= FullAdder:full_adder[4].FullAdder_inst.port4
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[0].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[1].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[2].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[3].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst0|FullAdder:full_adder[4].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1
+Cin => C[0].IN1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+Sum[0] <= FullAdder:full_adder[0].FullAdder_inst.port3
+Sum[1] <= FullAdder:full_adder[1].FullAdder_inst.port3
+Sum[2] <= FullAdder:full_adder[2].FullAdder_inst.port3
+Sum[3] <= FullAdder:full_adder[3].FullAdder_inst.port3
+Sum[4] <= FullAdder:full_adder[4].FullAdder_inst.port3
+Sum[5] <= FullAdder:full_adder[5].FullAdder_inst.port3
+Cout <= FullAdder:full_adder[5].FullAdder_inst.port4
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[0].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[1].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[2].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[3].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[4].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst1|FullAdder:full_adder[5].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2
+Cin => C[0].IN1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+Sum[0] <= FullAdder:full_adder[0].FullAdder_inst.port3
+Sum[1] <= FullAdder:full_adder[1].FullAdder_inst.port3
+Sum[2] <= FullAdder:full_adder[2].FullAdder_inst.port3
+Sum[3] <= FullAdder:full_adder[3].FullAdder_inst.port3
+Sum[4] <= FullAdder:full_adder[4].FullAdder_inst.port3
+Sum[5] <= FullAdder:full_adder[5].FullAdder_inst.port3
+Cout <= FullAdder:full_adder[5].FullAdder_inst.port4
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[0].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[1].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[2].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[3].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[4].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|ParameterizedRCA:ParameterizedRCA_inst2|FullAdder:full_adder[5].FullAdder_inst
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|Mux:R5_inst
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|Mux:R6_inst
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|Mux:R7_inst
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|Mux:R8_inst
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|Mux:R9_inst
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|Mux:R10_inst
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|CSA:CSA_inst|Mux:Cout_inst
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+select => comb.IN0
+cin => cin.IN5
+exponent[0] <= FullAdder:FullAdder_instS0.si
+exponent[1] <= FullAdder:FullAdder_instS1.si
+exponent[2] <= FullAdder:FullAdder_instS2.si
+exponent[3] <= FullAdder:FullAdder_instS3.si
+exponent[4] <= FullAdder:FullAdder_instS4.si
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS0
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS1
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS2
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS3
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|ControlledExponent_INC_DEC:ControlledExponent_INC_DEC_inst|FullAdder:FullAdder_instS4
+ai => Decoder0.IN0
+bi => Decoder0.IN1
+cini => Decoder0.IN2
+si <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+couti <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst
+A[0] => A[0].IN1
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+A[3] => A[3].IN2
+A[4] => A[4].IN2
+A[5] => A[5].IN2
+A[6] => A[6].IN2
+A[7] => A[7].IN2
+A[8] => A[8].IN2
+A[9] => A[9].IN2
+A[10] => A[10].IN2
+select => select.IN11
+mantissa[0] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[1] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[2] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[3] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[4] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[5] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[6] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[7] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[8] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[9] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst0
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst1
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst2
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst3
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst4
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst5
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst6
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst7
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst8
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_inst9
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|HPFPAdder:HPFPAdder_inst|MantissaNormalizer:MantissaNormalizer_inst|Mux:Mux_instA
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|OverflowUnderflow:OverflowUnderflow_inst
+EA[0] => WideAnd0.IN0
+EA[1] => WideAnd0.IN1
+EA[2] => WideAnd0.IN2
+EA[3] => WideAnd0.IN3
+EA[4] => WideAnd0.IN4
+EB[0] => WideAnd1.IN0
+EB[1] => WideAnd1.IN1
+EB[2] => WideAnd1.IN2
+EB[3] => WideAnd1.IN3
+EB[4] => WideAnd1.IN4
+finalmantissa[0] => Equal0.IN9
+finalmantissa[1] => Equal0.IN8
+finalmantissa[2] => Equal0.IN7
+finalmantissa[3] => Equal0.IN6
+finalmantissa[4] => Equal0.IN5
+finalmantissa[5] => Equal0.IN4
+finalmantissa[6] => Equal0.IN3
+finalmantissa[7] => Equal0.IN2
+finalmantissa[8] => Equal0.IN1
+finalmantissa[9] => Equal0.IN0
+finalexponent[0] => LessThan0.IN12
+finalexponent[1] => LessThan0.IN11
+finalexponent[2] => LessThan0.IN10
+finalexponent[3] => LessThan0.IN9
+finalexponent[4] => LessThan0.IN8
+finalexponent[5] => LessThan0.IN7
+exponentsubtractorcout => Underflow.DATAIN
+Overflow <= Overflow.DB_MAX_OUTPUT_PORT_TYPE
+Underflow <= exponentsubtractorcout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst
+HEX0[0] => HEX0[0].IN1
+HEX0[1] => HEX0[1].IN1
+HEX0[2] => HEX0[2].IN1
+HEX0[3] => HEX0[3].IN1
+HEX1[0] => HEX1[0].IN1
+HEX1[1] => HEX1[1].IN1
+HEX1[2] => HEX1[2].IN1
+HEX1[3] => HEX1[3].IN1
+HEX2[0] => HEX2[0].IN1
+HEX2[1] => HEX2[1].IN1
+HEX2[2] => HEX2[2].IN1
+HEX2[3] => HEX2[3].IN1
+HEX3[0] => HEX3[0].IN1
+HEX3[1] => HEX3[1].IN1
+HEX3[2] => HEX3[2].IN1
+HEX3[3] => HEX3[3].IN1
+CLK => CLK.IN1
+Reset => Reset.IN5
+Load => Load.IN4
+SEG[6] <= HEX2Seven:HEX2Seven_inst.seg
+SEG[5] <= HEX2Seven:HEX2Seven_inst.seg
+SEG[4] <= HEX2Seven:HEX2Seven_inst.seg
+SEG[3] <= HEX2Seven:HEX2Seven_inst.seg
+SEG[2] <= HEX2Seven:HEX2Seven_inst.seg
+SEG[1] <= HEX2Seven:HEX2Seven_inst.seg
+SEG[0] <= HEX2Seven:HEX2Seven_inst.seg
+CAT[0] <= Controller:Controller_inst.CAT
+CAT[1] <= Controller:Controller_inst.CAT
+CAT[2] <= Controller:Controller_inst.CAT
+CAT[3] <= Controller:Controller_inst.CAT
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst|Controller:Controller_inst
+MuxRate => state[0].CLK
+MuxRate => state[1].CLK
+Reset => state[0].ACLR
+Reset => state[1].ACLR
+SEL[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+SEL[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+CAT[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+CAT[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+CAT[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+CAT[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst|PIPO:HEX0_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst|PIPO:HEX1_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst|PIPO:HEX2_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst|PIPO:HEX3_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst|four2one:four2one_inst
+SEL[0] => Mux0.IN1
+SEL[0] => Mux1.IN1
+SEL[0] => Mux2.IN1
+SEL[0] => Mux3.IN1
+SEL[1] => Mux0.IN0
+SEL[1] => Mux1.IN0
+SEL[1] => Mux2.IN0
+SEL[1] => Mux3.IN0
+D0[0] => Mux3.IN2
+D0[1] => Mux2.IN2
+D0[2] => Mux1.IN2
+D0[3] => Mux0.IN2
+D1[0] => Mux3.IN3
+D1[1] => Mux2.IN3
+D1[2] => Mux1.IN3
+D1[3] => Mux0.IN3
+D2[0] => Mux3.IN4
+D2[1] => Mux2.IN4
+D2[2] => Mux1.IN4
+D2[3] => Mux0.IN4
+D3[0] => Mux3.IN5
+D3[1] => Mux2.IN5
+D3[2] => Mux1.IN5
+D3[3] => Mux0.IN5
+Y[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HalfPrecisionFPAdder|Multi7segdisplay:Multi7segdisplay_inst|HEX2Seven:HEX2Seven_inst
+value[0] => Decoder0.IN3
+value[1] => Decoder0.IN2
+value[2] => Decoder0.IN1
+value[3] => Decoder0.IN0
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

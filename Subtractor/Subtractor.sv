@@ -1,0 +1,25 @@
+//Subtractor
+module Subtractor
+(
+	input [10:0] A, B,
+	input cin,
+	output cout,
+	output [10:0] R
+);
+
+	wire [11:0] C;
+	assign C[0] = cin;
+	assign cout = C[11];
+	FullAdder FullAdder_inst0(.ai(A[0]) ,.bi(B[0]^cin) ,.cini(C[0]) ,.si(R[0]) ,.couti(C[1]));
+	FullAdder FullAdder_inst1(.ai(A[1]) ,.bi(B[1]^cin) ,.cini(C[1]) ,.si(R[1]) ,.couti(C[2]));
+	FullAdder FullAdder_inst2(.ai(A[2]) ,.bi(B[2]^cin) ,.cini(C[2]) ,.si(R[2]) ,.couti(C[3]));
+	FullAdder FullAdder_inst3(.ai(A[3]) ,.bi(B[3]^cin) ,.cini(C[3]) ,.si(R[3]) ,.couti(C[4]));
+	FullAdder FullAdder_inst4(.ai(A[4]) ,.bi(B[4]^cin) ,.cini(C[4]) ,.si(R[4]) ,.couti(C[5]));
+	FullAdder FullAdder_inst5(.ai(A[5]) ,.bi(B[5]^cin) ,.cini(C[5]) ,.si(R[5]) ,.couti(C[6]));
+	FullAdder FullAdder_inst6(.ai(A[6]) ,.bi(B[6]^cin) ,.cini(C[6]) ,.si(R[6]) ,.couti(C[7]));
+	FullAdder FullAdder_inst7(.ai(A[7]) ,.bi(B[7]^cin) ,.cini(C[7]) ,.si(R[7]) ,.couti(C[8]));
+	FullAdder FullAdder_inst8(.ai(A[8]) ,.bi(B[8]^cin) ,.cini(C[8]) ,.si(R[8]) ,.couti(C[9]));
+	FullAdder FullAdder_inst9(.ai(A[9]) ,.bi(B[9]^cin) ,.cini(C[9]) ,.si(R[9]) ,.couti(C[10]));
+	FullAdder FullAdder_instA(.ai(A[10]) ,.bi(B[10]^cin) ,.cini(C[10]) ,.si(R[10]) ,.couti(C[11]));
+	
+endmodule

@@ -1,0 +1,41 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'MuxRate'
+Slack : 0.110
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'MuxRate'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MuxRate'
+Slack : -3.000
+TNS   : -5.806
+
+Type  : Slow 1200mV 0C Model Setup 'MuxRate'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'MuxRate'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MuxRate'
+Slack : -3.000
+TNS   : -5.806
+
+Type  : Fast 1200mV 0C Model Setup 'MuxRate'
+Slack : 0.616
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MuxRate'
+Slack : 0.146
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MuxRate'
+Slack : -3.000
+TNS   : -5.090
+
+------------------------------------------------------------

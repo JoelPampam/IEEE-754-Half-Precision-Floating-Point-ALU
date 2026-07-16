@@ -1,0 +1,160 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/School/DL2/TermProject/HPFPAdder/simulation/qsim
+T_opt
+!s110 1777097389
+V48lGSlFk;[Ig`mKW@II9G3
+04 21 4 work HPFPAdder_vlg_vec_tst fast 0
+=1-40c73cc1b97f-69ec5aab-21a-1c68
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vhard_block
+Z4 2HPFPAdder.vo
+Z5 !s110 1777097385
+!i10b 1
+!s100 60aAz??C[J2GBiO4aJ_j:2
+IN3AVJ5192NC]zlfY1_jbU1
+R2
+Z6 w1777097381
+Z7 8HPFPAdder.vo
+Z8 FHPFPAdder.vo
+!i122 64
+L0 3646 45
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z11 !s108 1777097385.000000
+Z12 !s107 HPFPAdder.vo|
+Z13 !s90 -work|work|HPFPAdder.vo|
+!i113 0
+Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vHPFPAdder
+R4
+R5
+!i10b 1
+!s100 92O7MG5O8T:5ERnP56?SZ1
+IEgZ^LoMc=_LRWBiJQV2@h1
+R2
+R6
+R7
+R8
+!i122 64
+L0 32 3613
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R3
+n@h@p@f@p@adder
+vHPFPAdder_vlg_vec_tst
+2Waveform.vwf.vt
+!s110 1777097386
+!i10b 1
+!s100 ?kB5TP8FegZPa`5DGO>;J3
+IA0_lT3c@gFFYU:WmE9lkM1
+R2
+w1777097380
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 65
+L0 30 182
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R14
+R3
+n@h@p@f@p@adder_vlg_vec_tst

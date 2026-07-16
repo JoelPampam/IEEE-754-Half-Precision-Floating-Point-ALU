@@ -1,0 +1,25 @@
+module CU
+(
+	input [15:0] A,B,
+	output [15:0] Aout, Bout,
+	output addsub
+);
+	assign addsub = A[15] ^ B[15];
+	
+	always_comb begin
+		if(addsub) begin
+			if(A[14:0] > B[14:0]) begin
+				Aout = A;
+				Bout = B;
+			end
+			else
+				Aout = B;
+				Bout = A;
+			end
+		else begin
+			Aout = A;
+			Bout = B;
+		end
+	end
+	
+endmodule

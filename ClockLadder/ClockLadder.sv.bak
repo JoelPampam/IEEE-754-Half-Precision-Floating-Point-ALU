@@ -1,0 +1,9 @@
+module ClockLadder
+(
+	input clock, clear,
+	output logic [31:0] Y
+);
+	always_ff @ (posedge clock, negedge clear)
+		if(~clear) Y <= 1'b0;
+			else Y <= Y + 1'b1;
+endmodule

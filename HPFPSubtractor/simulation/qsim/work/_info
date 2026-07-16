@@ -1,0 +1,169 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/School/DL2/Subtractor module/HPFPSubtractor/simulation/qsim
+T_opt
+!s110 1777211269
+VL<bd3Zi65:I>0MOE9SdTT0
+04 26 4 work HPFPSubtractor_vlg_vec_tst fast 0
+=1-40c73cc1b97f-69ee1784-19f-94ec
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+R2
+vhard_block
+Z4 2HPFPSubtractor.vo
+Z5 !s110 1777215104
+!i10b 1
+!s100 `]_7LJ:BD;aT??i>KJNF[0
+IZXeDi7oP6F;9KG^l<X5Dz3
+R2
+Z6 w1777215098
+Z7 8HPFPSubtractor.vo
+Z8 FHPFPSubtractor.vo
+!i122 78
+L0 3879 45
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z11 !s108 1777215104.000000
+Z12 !s107 HPFPSubtractor.vo|
+Z13 !s90 -work|work|HPFPSubtractor.vo|
+!i113 0
+Z14 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vHPFPSubtractor
+R4
+R5
+!i10b 1
+!s100 3CdhFO5J`SLjhD:H[nD851
+ILL5af8TXXC@ZQZcz1iI6f3
+R2
+R6
+R7
+R8
+!i122 78
+L0 32 3846
+R9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R3
+n@h@p@f@p@subtractor
+vHPFPSubtractor_vlg_vec_tst
+2Waveform.vwf.vt
+R5
+!i10b 1
+!s100 A>9@R89WAIN5Y@4IMHkWl3
+IEV6FD8iha:ZMMG04OC6N_2
+R2
+w1777215096
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 79
+L0 30 182
+R9
+R10
+r1
+!s85 0
+31
+R11
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R14
+R3
+n@h@p@f@p@subtractor_vlg_vec_tst

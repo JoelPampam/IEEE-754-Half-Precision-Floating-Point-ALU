@@ -1,0 +1,136 @@
+$comment
+	File created using the following command:
+		vcd file OverflowUnderflow.msim.vcd -direction
+$end
+$date
+	Sun Apr 26 05:29:55 2026
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2024.3
+$end
+$timescale
+	1ps
+$end
+
+$scope module OverflowUnderflow_vlg_vec_tst $end
+$var reg 5 ! EA [4:0] $end
+$var reg 5 " EB [4:0] $end
+$var reg 6 # finalexponent [5:0] $end
+$var reg 10 $ finalmantissa [9:0] $end
+$var wire 1 % Overflow $end
+$var wire 1 & Underflow $end
+
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var tri1 1 * devclrn $end
+$var tri1 1 + devpor $end
+$var tri1 1 , devoe $end
+$var wire 1 - finalexponent[0]~input_o $end
+$var wire 1 . finalexponent[1]~input_o $end
+$var wire 1 / finalexponent[2]~input_o $end
+$var wire 1 0 finalexponent[3]~input_o $end
+$var wire 1 1 ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 2 ~QUARTUS_CREATED_UNVM~~busy $end
+$var wire 1 3 ~QUARTUS_CREATED_ADC1~~eoc $end
+$var wire 1 4 ~QUARTUS_CREATED_ADC2~~eoc $end
+$var wire 1 5 Overflow~output_o $end
+$var wire 1 6 Underflow~output_o $end
+$var wire 1 7 finalexponent[4]~input_o $end
+$var wire 1 8 finalexponent[5]~input_o $end
+$var wire 1 9 EA[4]~input_o $end
+$var wire 1 : EA[0]~input_o $end
+$var wire 1 ; EA[1]~input_o $end
+$var wire 1 < EA[2]~input_o $end
+$var wire 1 = EA[3]~input_o $end
+$var wire 1 > WideNor0~0_combout $end
+$var wire 1 ? EB[2]~input_o $end
+$var wire 1 @ EB[3]~input_o $end
+$var wire 1 A EB[1]~input_o $end
+$var wire 1 B EB[0]~input_o $end
+$var wire 1 C WideNor1~0_combout $end
+$var wire 1 D EB[4]~input_o $end
+$var wire 1 E Underflow~0_combout $end
+$var wire 1 F WideAnd1~0_combout $end
+$var wire 1 G WideAnd0~0_combout $end
+$var wire 1 H Underflow~1_combout $end
+$var wire 1 I Overflow~0_combout $end
+$var wire 1 J finalmantissa[0]~input_o $end
+$var wire 1 K finalmantissa[1]~input_o $end
+$var wire 1 L finalmantissa[2]~input_o $end
+$var wire 1 M finalmantissa[3]~input_o $end
+$var wire 1 N Equal0~0_combout $end
+$var wire 1 O finalmantissa[8]~input_o $end
+$var wire 1 P finalmantissa[9]~input_o $end
+$var wire 1 Q Equal0~2_combout $end
+$var wire 1 R finalmantissa[4]~input_o $end
+$var wire 1 S finalmantissa[7]~input_o $end
+$var wire 1 T finalmantissa[5]~input_o $end
+$var wire 1 U finalmantissa[6]~input_o $end
+$var wire 1 V Equal0~1_combout $end
+$var wire 1 W Underflow~2_combout $end
+$var wire 1 X Underflow~3_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11110 !
+b11110 "
+b100000 #
+b0 $
+1%
+0&
+0'
+1(
+x)
+1*
+1+
+1,
+0-
+0.
+0/
+00
+01
+z2
+z3
+z4
+15
+06
+07
+18
+19
+0:
+1;
+1<
+1=
+1>
+1?
+1@
+1A
+0B
+1C
+1D
+1E
+0F
+0G
+1H
+1I
+0J
+0K
+0L
+0M
+1N
+0O
+0P
+1Q
+0R
+0S
+0T
+0U
+1V
+0W
+0X
+$end
+#1000000

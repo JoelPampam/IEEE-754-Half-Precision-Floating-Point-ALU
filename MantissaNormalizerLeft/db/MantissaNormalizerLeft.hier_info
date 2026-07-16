@@ -1,0 +1,102 @@
+|MantissaNormalizerLeft
+A[0] => A[0].IN1
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+A[3] => A[3].IN2
+A[4] => A[4].IN2
+A[5] => A[5].IN2
+A[6] => A[6].IN2
+A[7] => A[7].IN2
+A[8] => A[8].IN2
+A[9] => A[9].IN2
+A[10] => A[10].IN2
+select => select.IN11
+mantissa[0] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[1] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[2] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[3] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[4] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[5] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[6] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[7] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[8] << Y.DB_MAX_OUTPUT_PORT_TYPE
+mantissa[9] << Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst0
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst1
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst2
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst3
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst4
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst5
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst6
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst7
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst8
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_inst9
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MantissaNormalizerLeft|Mux:Mux_instA
+A => Out.DATAB
+B => Out.DATAA
+S => Out.OUTPUTSELECT
+Out <= Out.DB_MAX_OUTPUT_PORT_TYPE
+
+

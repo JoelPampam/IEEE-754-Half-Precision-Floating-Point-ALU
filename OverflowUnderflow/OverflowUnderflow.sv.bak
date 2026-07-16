@@ -1,0 +1,16 @@
+module OverflowUnderflow
+(
+	input [4:0] EA, EB,
+	input [9:0] finalmantissa,
+	input [4:0] finalexponent
+	output Overflow, Undeflow
+);
+
+	logic Exception;
+	logic zero;
+	
+	assign Exception = (&EA) | (&EB);
+	assign zero = Exception ? 1'b0 : (finalmantissa == 9'd0) ? 1'b1 : 1'b0;
+	assign Overflow = ((finalexponent[4] & !finalexponent[3]) & !zero);
+	assign Underflow = ((finalexponent[4] & finalexponent[3]) & !zero) ? 1'b1 : 1'b0;
+endmodule

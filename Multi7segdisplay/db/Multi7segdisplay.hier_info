@@ -1,0 +1,167 @@
+|Multi7segdisplay
+HEX0[0] => HEX0[0].IN1
+HEX0[1] => HEX0[1].IN1
+HEX0[2] => HEX0[2].IN1
+HEX0[3] => HEX0[3].IN1
+HEX1[0] => HEX1[0].IN1
+HEX1[1] => HEX1[1].IN1
+HEX1[2] => HEX1[2].IN1
+HEX1[3] => HEX1[3].IN1
+HEX2[0] => HEX2[0].IN1
+HEX2[1] => HEX2[1].IN1
+HEX2[2] => HEX2[2].IN1
+HEX2[3] => HEX2[3].IN1
+HEX3[0] => HEX3[0].IN1
+HEX3[1] => HEX3[1].IN1
+HEX3[2] => HEX3[2].IN1
+HEX3[3] => HEX3[3].IN1
+CLK => CLK.IN1
+Reset => Reset.IN5
+Load => Load.IN4
+SEG[6] << HEX2Seven:HEX2Seven_inst.seg
+SEG[5] << HEX2Seven:HEX2Seven_inst.seg
+SEG[4] << HEX2Seven:HEX2Seven_inst.seg
+SEG[3] << HEX2Seven:HEX2Seven_inst.seg
+SEG[2] << HEX2Seven:HEX2Seven_inst.seg
+SEG[1] << HEX2Seven:HEX2Seven_inst.seg
+SEG[0] << HEX2Seven:HEX2Seven_inst.seg
+CAT[0] << Controller:Controller_inst.CAT
+CAT[1] << Controller:Controller_inst.CAT
+CAT[2] << Controller:Controller_inst.CAT
+CAT[3] << Controller:Controller_inst.CAT
+
+
+|Multi7segdisplay|Controller:Controller_inst
+MuxRate => state[0].CLK
+MuxRate => state[1].CLK
+Reset => state[0].ACLR
+Reset => state[1].ACLR
+SEL[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+SEL[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+CAT[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+CAT[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+CAT[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+CAT[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multi7segdisplay|PIPO:HEX0_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multi7segdisplay|PIPO:HEX1_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multi7segdisplay|PIPO:HEX2_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multi7segdisplay|PIPO:HEX3_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLR => Q[0]~reg0.ACLR
+CLR => Q[1]~reg0.ACLR
+CLR => Q[2]~reg0.ACLR
+CLR => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multi7segdisplay|four2one:four2one_inst
+SEL[0] => Mux0.IN1
+SEL[0] => Mux1.IN1
+SEL[0] => Mux2.IN1
+SEL[0] => Mux3.IN1
+SEL[1] => Mux0.IN0
+SEL[1] => Mux1.IN0
+SEL[1] => Mux2.IN0
+SEL[1] => Mux3.IN0
+D0[0] => Mux3.IN2
+D0[1] => Mux2.IN2
+D0[2] => Mux1.IN2
+D0[3] => Mux0.IN2
+D1[0] => Mux3.IN3
+D1[1] => Mux2.IN3
+D1[2] => Mux1.IN3
+D1[3] => Mux0.IN3
+D2[0] => Mux3.IN4
+D2[1] => Mux2.IN4
+D2[2] => Mux1.IN4
+D2[3] => Mux0.IN4
+D3[0] => Mux3.IN5
+D3[1] => Mux2.IN5
+D3[2] => Mux1.IN5
+D3[3] => Mux0.IN5
+Y[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Multi7segdisplay|HEX2Seven:HEX2Seven_inst
+value[0] => Decoder0.IN3
+value[1] => Decoder0.IN2
+value[2] => Decoder0.IN1
+value[3] => Decoder0.IN0
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

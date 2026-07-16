@@ -1,0 +1,71 @@
+// Multi 7 Segment display
+module Multi7segdisplay
+(
+	input [3:0] HEX0, HEX1, HEX2, HEX3,
+	input CLK, Reset, Load,
+	output logic [0:6] SEG,
+	output logic [3:0] CAT
+);
+
+	logic [3:0] D0,D1,D2,D3;
+	logic [3:0]Y;
+	logic [1:0] SEL;
+	
+	
+	Controller Controller_inst
+	(
+		.MuxRate(CLK) ,	// input  MuxRate_sig
+		.Reset(Reset) ,	// input  Reset_sig
+		.SEL(SEL) ,	// output [1:0] SEL_sig
+		.CAT(CAT) 	// output [3:0] CAT_sig
+	);
+	
+	PIPO HEX0_inst
+	(
+		.D(HEX0) ,	// input [3:0] D_sig
+		.CLK(Load) ,	// input  CLK_sig
+		.CLR(Reset) ,	// input  CLR_sig
+		.Q(D0) 	// output [3:0] Q_sig
+	);
+	
+	PIPO HEX1_inst
+	(
+		.D(HEX1) ,	// input [3:0] D_sig
+		.CLK(Load) ,	// input  CLK_sig
+		.CLR(Reset) ,	// input  CLR_sig
+		.Q(D1) 	// output [3:0] Q_sig
+	);
+	
+	PIPO HEX2_inst
+	(
+		.D(HEX2) ,	// input [3:0] D_sig
+		.CLK(Load) ,	// input  CLK_sig
+		.CLR(Reset) ,	// input  CLR_sig
+		.Q(D2) 	// output [3:0] Q_sig
+	);
+	
+	PIPO HEX3_inst
+	(
+		.D(HEX3) ,	// input [3:0] D_sig
+		.CLK(Load) ,	// input  CLK_sig
+		.CLR(Reset) ,	// input  CLR_sig
+		.Q(D3) 	// output [3:0] Q_sig
+	);
+	
+	four2one four2one_inst
+	(
+		.SEL(SEL) ,	// input [1:0] SEL_sig
+		.D0(D0) ,	// input [3:0] D0_sig
+		.D1(D1) ,	// input [3:0] D1_sig
+		.D2(D2) ,	// input [3:0] D2_sig
+		.D3(D3) ,	// input [3:0] D3_sig
+		.Y(Y) 	// output [3:0] Y_sig
+	);
+	
+	HEX2Seven HEX2Seven_inst
+	(
+		.value(Y) ,	// input [3:0] value_sig
+		.seg(SEG) 	// output [0:6] seg_sig
+	);
+	
+endmodule

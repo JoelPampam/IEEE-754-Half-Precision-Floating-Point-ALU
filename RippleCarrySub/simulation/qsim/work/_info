@@ -1,0 +1,98 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/School/DL2/Lab9/RippleCarrySub/simulation/qsim
+T_opt
+!s110 1775107888
+VmO=JfSb7^:KmHo`P>bzg30
+04 26 4 work RippleCarrySub_vlg_vec_tst fast 0
+=1-40c73cc1b97f-69cdff2d-158-63ac
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vhard_block
+Z3 2RippleCarrySub.vo
+Z4 !s110 1775107882
+!i10b 1
+!s100 YL73=aC6oG`ZIff;Pd_X33
+IS8QcJcV`Kez[GQQd[z?GL3
+R1
+Z5 w1775107877
+Z6 8RippleCarrySub.vo
+Z7 FRippleCarrySub.vo
+!i122 0
+L0 972 45
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z10 !s108 1775107882.000000
+Z11 !s107 RippleCarrySub.vo|
+Z12 !s90 -work|work|RippleCarrySub.vo|
+!i113 0
+Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vRippleCarrySub
+R3
+R4
+!i10b 1
+!s100 CKX8H76CCheAAmKDSl0HJ0
+IDhg^Pi0NZkK0_N4W8jGY93
+R1
+R5
+R6
+R7
+!i122 0
+L0 32 939
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@ripple@carry@sub
+vRippleCarrySub_vlg_vec_tst
+2Waveform.vwf.vt
+!s110 1775107883
+!i10b 1
+!s100 YLm?aBlY3mC6MIiiIDK:^1
+Il1TXWKT[gDoWb:DjB_?990
+R1
+w1775107876
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 1
+L0 30 102
+R8
+R9
+r1
+!s85 0
+31
+!s108 1775107883.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R13
+R2
+n@ripple@carry@sub_vlg_vec_tst

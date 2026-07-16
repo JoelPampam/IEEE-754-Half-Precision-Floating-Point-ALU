@@ -1,0 +1,60 @@
+//Top Level module
+module HalfPrecisionFPAdder
+(
+	input clk,
+	input reset,
+	input [3:0] row,
+	output [3:0] col,
+	output logic [3:0] CAT,
+	output logic [0:6] SEG
+);
+
+	logic [15:0] BCDSM;
+
+
+	keypad_input #(.DIGITS(4)) keypad_input_inst
+	(
+		.clk(clk),
+		.reset(reset),
+		.row(row),
+		.col(col),
+		.out(BCDSM),
+		.value(value),
+		.trig(trig)
+	);
+
+	
+	logic [31:0] Y;
+	logic MuxRate, CounterCLK;
+	logic [3:0] HEX0, HEX1, HEX2, HEX3;
+	
+	
+		
+	ClockLadder ClockLadder_inst
+	(
+		.clock(clk) ,	// input  clock_sig
+		.clear(reset) ,	// input  clear_sig
+		.Y(Y) 	// output [31:0] Y_sig
+	);
+	assign CounterCLK = Y[22];
+	assign MuxRate = Y[17];
+	assign HEX0 = BCDSM[3:0];
+	assign HEX1 = BCDSM[7:4];
+	assign HEX2 = BCDSM[11:8];
+	assign HEX3 = BCDSM[15:12];
+	
+		
+	Multi7segdisplay Multi7segdisplay_inst
+	(
+		.HEX0(HEX0) ,	// input [3:0] HEX0_sig
+		.HEX1(HEX1) ,	// input [3:0] HEX1_sig
+		.HEX2(HEX2) ,	// input [3:0] HEX2_sig
+		.HEX3(HEX3) ,	// input [3:0] HEX3_sig
+		.CLK(MuxRate) ,	// input  CLK_sig
+		.Reset(reset) ,	// input  Reset_sig
+		.Load(CounterCLK) ,	// input  Load_sig
+		.SEG(SEG) ,	// output [0:6] SEG_sig
+		.CAT(CAT) 	// output [3:0] CAT_sig
+	);
+	
+endmodule

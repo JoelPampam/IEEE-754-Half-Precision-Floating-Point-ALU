@@ -1,0 +1,41 @@
+module BarrelShifter (
+
+	input [7:0] A,
+	input [2:0] B,
+	output [7:0] Y
+);
+
+	logic [7:0] W;
+	logic [7:0] X;
+
+	//Top Row
+	Mux Mux_inst0(.A(A[4]) ,.B(A[0]) ,.S(B[2]) ,.Out(W[0]));
+	Mux Mux_inst1(.A(A[5]) ,.B(A[1]) ,.S(B[2]) ,.Out(W[1]));
+	Mux Mux_inst2(.A(A[6]) ,.B(A[2]) ,.S(B[2]) ,.Out(W[2]));
+	Mux Mux_inst3(.A(A[7]) ,.B(A[3]) ,.S(B[2]) ,.Out(W[3]));
+	Mux Mux_inst4(.A(1'b0) ,.B(A[4]) ,.S(B[2]) ,.Out(W[4]));
+	Mux Mux_inst5(.A(1'b0) ,.B(A[5]) ,.S(B[2]) ,.Out(W[5]));
+	Mux Mux_inst6(.A(1'b0) ,.B(A[6]) ,.S(B[2]) ,.Out(W[6]));
+	Mux Mux_inst7(.A(1'b0) ,.B(A[7]) ,.S(B[2]) ,.Out(W[7]));
+
+	//Middle Row
+	Mux Mux_inst0(.A(W[2]) ,.B(W[0]) ,.S(B[1]) ,.Out(X[0]));
+	Mux Mux_inst1(.A(W[3]) ,.B(W[1]) ,.S(B[1]) ,.Out(X[1]));
+	Mux Mux_inst2(.A(W[4]) ,.B(W[2]) ,.S(B[1]) ,.Out(X[2]));
+	Mux Mux_inst3(.A(W[5]) ,.B(W[3]) ,.S(B[1]) ,.Out(X[3]));
+	Mux Mux_inst4(.A(W[6]) ,.B(W[4]) ,.S(B[1]) ,.Out(X[4]));
+	Mux Mux_inst5(.A(W[7]) ,.B(W[5]) ,.S(B[1]) ,.Out(X[5]));
+	Mux Mux_inst6(.A(1'b0) ,.B(W[6]) ,.S(B[1]) ,.Out(X[6]));
+	Mux Mux_inst7(.A(1'b0) ,.B(W[7]) ,.S(B[1]) ,.Out(X[7]));
+
+	//Last Row
+	Mux Mux_inst0(.A(X[1]) ,.B(X[0]) ,.S(B[0]) ,.Out(Y[0]));
+	Mux Mux_inst1(.A(X[2]) ,.B(X[1]) ,.S(B[0]) ,.Out(Y[1]));
+	Mux Mux_inst2(.A(X[3]) ,.B(X[2]) ,.S(B[0]) ,.Out(Y[2]));
+	Mux Mux_inst3(.A(X[4]) ,.B(X[3]) ,.S(B[0]) ,.Out(Y[3]));
+	Mux Mux_inst4(.A(X[5]) ,.B(X[4]) ,.S(B[0]) ,.Out(Y[4]));
+	Mux Mux_inst5(.A(X[6]) ,.B(X[5]) ,.S(B[0]) ,.Out(Y[5]));
+	Mux Mux_inst6(.A(X[7]) ,.B(X[6]) ,.S(B[0]) ,.Out(Y[6]));
+	Mux Mux_inst7(.A(1'b0) ,.B(X[7]) ,.S(B[0]) ,.Out(Y[7]));
+	
+endmodule

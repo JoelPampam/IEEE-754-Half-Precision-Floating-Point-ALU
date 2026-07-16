@@ -1,0 +1,15 @@
+module MantissaNormalizer
+(
+	input [10:0] A,
+	input select,
+	output [9:0] mantissa
+);
+
+	always_comb begin
+		if(select == 1)
+			mantissa = A[10:1];
+		else
+			mantissa = A[9:0];
+	end
+	
+endmodule

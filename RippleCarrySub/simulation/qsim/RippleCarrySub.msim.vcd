@@ -1,0 +1,174 @@
+$comment
+	File created using the following command:
+		vcd file RippleCarrySub.msim.vcd -direction
+$end
+$date
+	Thu Apr  2 00:31:29 2026
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2024.3
+$end
+$timescale
+	1ps
+$end
+
+$scope module RippleCarrySub_vlg_vec_tst $end
+$var reg 8 ! A [7:0] $end
+$var reg 8 " B [7:0] $end
+$var wire 1 # Cout $end
+$var wire 1 $ R [7] $end
+$var wire 1 % R [6] $end
+$var wire 1 & R [5] $end
+$var wire 1 ' R [4] $end
+$var wire 1 ( R [3] $end
+$var wire 1 ) R [2] $end
+$var wire 1 * R [1] $end
+$var wire 1 + R [0] $end
+
+$scope module i1 $end
+$var wire 1 , gnd $end
+$var wire 1 - vcc $end
+$var wire 1 . unknown $end
+$var tri1 1 / devclrn $end
+$var tri1 1 0 devpor $end
+$var tri1 1 1 devoe $end
+$var wire 1 2 ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 3 ~QUARTUS_CREATED_UNVM~~busy $end
+$var wire 1 4 ~QUARTUS_CREATED_ADC1~~eoc $end
+$var wire 1 5 ~QUARTUS_CREATED_ADC2~~eoc $end
+$var wire 1 6 R[0]~output_o $end
+$var wire 1 7 R[1]~output_o $end
+$var wire 1 8 R[2]~output_o $end
+$var wire 1 9 R[3]~output_o $end
+$var wire 1 : R[4]~output_o $end
+$var wire 1 ; R[5]~output_o $end
+$var wire 1 < R[6]~output_o $end
+$var wire 1 = R[7]~output_o $end
+$var wire 1 > Cout~output_o $end
+$var wire 1 ? B[0]~input_o $end
+$var wire 1 @ A[0]~input_o $end
+$var wire 1 A full_adder[0].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 B B[1]~input_o $end
+$var wire 1 C Bsub[0]~1_cout $end
+$var wire 1 D Bsub[1]~2_combout $end
+$var wire 1 E A[1]~input_o $end
+$var wire 1 F full_adder[1].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 G full_adder[1].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 H B[2]~input_o $end
+$var wire 1 I Bsub[1]~3 $end
+$var wire 1 J Bsub[2]~4_combout $end
+$var wire 1 K A[2]~input_o $end
+$var wire 1 L full_adder[2].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 M B[3]~input_o $end
+$var wire 1 N Bsub[2]~5 $end
+$var wire 1 O Bsub[3]~6_combout $end
+$var wire 1 P A[3]~input_o $end
+$var wire 1 Q full_adder[2].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 R full_adder[3].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 S A[4]~input_o $end
+$var wire 1 T B[4]~input_o $end
+$var wire 1 U Bsub[3]~7 $end
+$var wire 1 V Bsub[4]~8_combout $end
+$var wire 1 W full_adder[3].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 X full_adder[4].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 Y A[5]~input_o $end
+$var wire 1 Z B[5]~input_o $end
+$var wire 1 [ Bsub[4]~9 $end
+$var wire 1 \ Bsub[5]~10_combout $end
+$var wire 1 ] full_adder[4].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 ^ full_adder[5].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 _ full_adder[5].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 ` B[6]~input_o $end
+$var wire 1 a Bsub[5]~11 $end
+$var wire 1 b Bsub[6]~12_combout $end
+$var wire 1 c A[6]~input_o $end
+$var wire 1 d full_adder[6].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 e full_adder[6].FullAdder_inst|WideOr0~0_combout $end
+$var wire 1 f B[7]~input_o $end
+$var wire 1 g Bsub[6]~13 $end
+$var wire 1 h Bsub[7]~14_combout $end
+$var wire 1 i A[7]~input_o $end
+$var wire 1 j full_adder[7].FullAdder_inst|WideOr1~0_combout $end
+$var wire 1 k full_adder[7].FullAdder_inst|WideOr0~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10000000 !
+b10000001 "
+0#
+1+
+1*
+1)
+1(
+1'
+1&
+1%
+1$
+0,
+1-
+x.
+1/
+10
+11
+02
+z3
+z4
+z5
+16
+17
+18
+19
+1:
+1;
+1<
+1=
+0>
+1?
+0@
+1A
+0B
+0C
+1D
+0E
+1F
+0G
+0H
+1I
+1J
+0K
+1L
+0M
+0N
+1O
+0P
+0Q
+1R
+0S
+0T
+1U
+1V
+0W
+1X
+0Y
+0Z
+0[
+1\
+0]
+1^
+0_
+0`
+1a
+1b
+0c
+1d
+0e
+1f
+0g
+0h
+1i
+1j
+0k
+$end
+#1000000
